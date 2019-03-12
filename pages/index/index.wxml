@@ -44,45 +44,104 @@
   </view>
 
   <view class='background_separated'></view>
-  <view class='userinfo_input1'>cccc</view>
+
+  <view class='userinfo_input1'>
+    <view class='userinfo_input11'>
+      <view class='userinfo_input_view'>
+        <view class='uititle'>
+          <image src='../../images/home@3x.png' class='ui_home_img'></image>
+          <view class='ui_title_text'>期望工作城市</view>
+        </view>
+        <view class='choice'>
+          <view class='ui_choice'>
+            <view class='ui_choice_text_city'>上海市</view>
+            <view class='ui_yuan'></view>
+          </view>  
+        </view>
+      </view>
+      <view class='userinfo_input_view'>
+        <view class='uititle'>
+          <image src='../../images/money@3x.png' class='ui_money_img'></image>
+          <view class='ui_title_text'>期望从事行业</view>
+        </view>
+        <view class='choice'>
+          <view class='ui_choice'>
+            <view class='ui_choice_text_industry'>高科技/IT</view>
+            <view class='ui_yuan'></view>
+          </view>  
+        </view>
+      </view>
+    </view>
+    <view class='userinfo_input12'>
+      <view class='userinfo_input_view'>
+        <view class='uititle'>
+          <image src='../../images/home@3x.png' class='ui_home_img'></image>
+          <view class='ui_title_text'>毕业院校</view>
+        </view>
+        <view class='choice'>
+          <view class='ui_choice'>
+            <view class='ui_choice_text_university'>中国科技大学</view>
+            <view class='ui_yuan'></view>
+          </view>  
+        </view>
+      </view>
+      <view class='userinfo_input_view'>
+        <view class='uititle'>
+          <image src='../../images/money@3x.png' class='ui_money_img'></image>
+          <view class='ui_title_text'>最高学历</view>
+        </view>
+        <view class='choice'>
+          <view class='ui_choice'>
+            <view class='ui_choice_text_record'>本科</view>
+            <view class='ui_yuan'></view>
+          </view>  
+        </view>
+      </view>
+    </view>
+  </view>
+  
   <view class='background_separated'></view>
   
   <view class='userinfo_input2'>
-    <view class='userinfo_input2_view'>
-      <view class='ui2title'>
-        <image src='../../images/home@3x.png' class='ui2_home_img'></image>
-        <view class='ui2_title_text'>月度住房开销</view>
+    <view class='userinfo_input_view'>
+      <view class='uititle'>
+        <image src='../../images/home@3x.png' class='ui_home_img'></image>
+        <view class='ui_title_text'>月度住房开销</view>
       </view>
       <view class='cost'>
-        <view class='ui2_yuan_char'>¥</view>
-        <view class='ui2_input'>
-          <view class='ui2_number'>800</view>
-          <view class='ui2_yuan'>元</view>
+        <view class='ui_yuan_char'>¥</view>
+        <view class='ui_input'>
+          <view class='ui_number'>800</view>
+          <view class='ui_yuan'>元</view>
         </view>  
       </view>
     </view>
-
-    <view class='userinfo_input2_view'>
-      <view class='ui2title'>
-        <image src='../../images/money@3x.png' class='ui2_money_img'></image>
-        <view class='ui2_title_text'>月度其他开销</view>
+    <view class='userinfo_input_view'>
+      <view class='uititle'>
+        <image src='../../images/money@3x.png' class='ui_money_img'></image>
+        <view class='ui_title_text'>月度其他开销</view>
       </view>
       <view class='cost'>
-        <view class='ui2_yuan_char'>¥</view>
-        <view class='ui2_input'>
-          <view class='ui2_number'>1000</view>
-          <view class='ui2_yuan'>元</view>
+        <view class='ui_yuan_char'>¥</view>
+        <view class='ui_input'>
+          <view class='ui_number'>1000</view>
+          <view class='ui_yuan'>元</view>
         </view>  
       </view>
     </view>
   </view>
 
   <view class='background_separated_wuxianyijin'>
-    <!-- <image></image> -->
+    <image src='../../images/wuxianyijin@3x.png' class='background_separated_img'></image>
     <view class='background_separated_wuxianyijin_text'>五险一金缴纳明细参考</view>
   </view>
-  <view class='wuxianyijin_reference'>ff</view>
+  <view class='wuxianyijin_reference'>
+    <view></view>
+    <view></view>
+  </view>
 </view>
+
+<view class='background_separated_bottom'></view>
 
 <view class='buttons_view'>
   <view class='commit_button'>保存方案</view>
