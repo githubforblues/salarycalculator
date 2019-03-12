@@ -1,13 +1,91 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!--pages/index/index.wxml-->
+<view>
+  <view class='salaryandsurplus'>
+
+    <view class='salaryandsurplusview'>
+      <view class='sstitle'>
+        <image src='../../images/salaryref@3x.png' class='ss_salaryref_img'></image>
+        <view class='ss_title_text'>你的月薪参考</view>
+      </view>
+      <view class='ssrefernumber'>
+        <view class='ss_yuan_char'>¥</view>
+        <view class='ss_number'>6803</view>
+        <view class='ss_yuan'>元</view>
+      </view>
+      <view class='ssreferrange'>
+        <view class='ss_yuan_char_small'>¥</view>
+        <view class='ss_number_range'>5500 ～ 7200 元</view>
+      </view>
+    </view>
+
+    <view class='salaryandsurplusview'>
+      <view class='sstitle'>
+        <image src='../../images/surplusref@3x.png' class='ss_surplusref_img'></image>
+        <view class='ss_title_text'>月结余参考</view>
+      </view>
+      <view class='ssrefernumber'>
+        <view class='ss_yuan_char'>¥</view>
+        <view class='ss_number'>-200</view>
+        <view class='ss_yuan'>元</view>
+      </view>
+      <view class='ssreferrange'>
+        <view class='ss_yuan_char_small'>¥</view>
+        <view class='ss_number_range'>-2500 ～ 1200 元</view>
+      </view>
+    </view>
+
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <view class='tax_reference'>
+    <view class='reference'>个税: 0</view>
+    <view class='reference'>社保: 0</view>
+    <view class='reference'>公积金: 0</view>
+    <view></view>
   </view>
+
+  <view class='background_separated'></view>
+  <view class='userinfo_input1'>cccc</view>
+  <view class='background_separated'></view>
+  
+  <view class='userinfo_input2'>
+    <view class='userinfo_input2_view'>
+      <view class='ui2title'>
+        <image src='../../images/home@3x.png' class='ui2_home_img'></image>
+        <view class='ui2_title_text'>月度住房开销</view>
+      </view>
+      <view class='cost'>
+        <view class='ui2_yuan_char'>¥</view>
+        <view class='ui2_input'>
+          <view class='ui2_number'>800</view>
+          <view class='ui2_yuan'>元</view>
+        </view>  
+      </view>
+    </view>
+
+    <view class='userinfo_input2_view'>
+      <view class='ui2title'>
+        <image src='../../images/money@3x.png' class='ui2_money_img'></image>
+        <view class='ui2_title_text'>月度其他开销</view>
+      </view>
+      <view class='cost'>
+        <view class='ui2_yuan_char'>¥</view>
+        <view class='ui2_input'>
+          <view class='ui2_number'>1000</view>
+          <view class='ui2_yuan'>元</view>
+        </view>  
+      </view>
+    </view>
+  </view>
+
+  <view class='background_separated_wuxianyijin'>
+    <!-- <image></image> -->
+    <view class='background_separated_wuxianyijin_text'>五险一金缴纳明细参考</view>
+  </view>
+  <view class='wuxianyijin_reference'>ff</view>
 </view>
+
+<view class='buttons_view'>
+  <view class='commit_button'>保存方案</view>
+  <view class='analysis_button'>方案分析</view>
+</view>
+

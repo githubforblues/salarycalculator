@@ -1,21 +1,275 @@
-/**index.wxss**/
-.userinfo {
+/* pages/index/index.wxss */
+.salaryandsurplus {
+  width: 100%;
+  height: 107px;
+  background-color: #61A189;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+.salaryandsurplusview {
+  margin-top: 13px;
+  margin-left: 17px;
+  margin-bottom: 5px;
+  margin-right: 21px;     /* 临时数值，这里要再加一个view放中间，做响应式布局 */
+  flex: 1;
+}
+
+
+.salaryandsurplusview .sstitle {
+  display: flex;
+  flex-direction: row;
+}
+.salaryandsurplusview .ss_salaryref_img {
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+  margin-top: 2px;
+}
+.salaryandsurplusview .ss_surplusref_img {
+  width: 16px;
+  height: 10px;
+  margin-right: 7px;
+  margin-top: 5px;
+}
+.salaryandsurplusview .ss_title_text {
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+}
+.salaryandsurplusview .ssrefernumber {
+  display: flex;
+  flex-direction: row;
+}
+.salaryandsurplusview .ss_yuan_char {
+  font-family: PingFangSC-Medium;
+  font-size: 27px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+}
+.salaryandsurplusview .ss_yuan_char_gray {
+  font-family: PingFangSC-Medium;
+  font-size: 27px;
+  color: #FFFFFF;
+  opacity: 0.3;
+  letter-spacing: 0;
+  text-align: center;
+}
+.salaryandsurplusview .ss_number {
+  font-family: PingFangSC-Medium;
+  font-size: 27px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: right;
+  width: 120px;
+}
+.salaryandsurplusview .ss_yuan {
+  opacity: 0.3;
+  font-family: PingFangSC-Medium;
+  font-size: 13.59px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  margin-top: 14px;
+  margin-left: 4px;
+}
+.salaryandsurplusview .ssreferrange {
+  display: flex;
+  flex-direction: row;
+
+  padding-top: 5px;
+  border-top-style: dashed;
+  border-top-color: #9FC7BA;
+  border-top-width: 1px;
+}
+.salaryandsurplusview .ss_yuan_char_small {
+  opacity: 0.3;
+  font-family: PingFangSC-Medium;
+  font-size: 14.49px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  margin-top: -2px;
+  margin-left: 4px;
+}
+.salaryandsurplusview .ss_number_range {
+  opacity: 0.3;
+  font-family: PingFangSC-Medium;
+  font-size: 10.87px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: right;
+  width: 140px;
+}
+
+.userinfo_input2 {
+  width: 100%;
+  height: 104px;
+  background-color: #FFFFFF;
+  
+  display: flex;
+  flex-direction: row;
+}
+.userinfo_input2_view {
+  margin-top: 14px;
+  margin-bottom: 26px;
+  padding-left: 25px;
+  padding-right: 25px;
+  flex: 1;
+}
+.userinfo_input2_view .ui2title {
+  display: flex;
+  flex-direction: row;
+}
+.userinfo_input2_view .ui2_home_img {
+  width: 13px;
+  height: 13px;
+  margin-right: 7px;
+  margin-left: 3px;
+  margin-top: 2px;
+}
+.userinfo_input2_view .ui2_money_img {
+  width: 12px;
+  height: 14px;
+  margin-right: 7px;
+  margin-left: 3px;
+  margin-top: 2px;
+}
+.userinfo_input2_view .ui2_title_text {
+  font-family: PingFangSC-Medium;
+  font-size: 12px;
+  color: #61A189;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+}
+.userinfo_input2_view .cost {
+  display: flex;
+  flex-direction: row;
+}
+.userinfo_input2_view .ui2_yuan_char {
+  font-family: PingFangSC-Medium;
+  font-size: 30px;
+  color: #DCDCDC;
+  letter-spacing: 0;
+  text-align: center;
+}
+.userinfo_input2_view .ui2_input {
+  display: flex;
+  flex-direction: row;
+  width: 122px;
+
+  border-bottom-style: solid;
+  border-bottom-color: #D3D3D3;
+  border-bottom-width: 1px;
+}
+.userinfo_input2_view .ui2_number {
+  font-family: PingFangSC-Medium;
+  font-size: 30px;
+  color: #7A7A7A;
+  letter-spacing: 0;
+  text-align: right;
+  width: 102px;
+}
+.userinfo_input2_view .ui2_yuan {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #DCDCDC;
+  letter-spacing: 0;
+  margin-top: 14px;
+  margin-left: 4px;
+}
+
+
+.tax_reference {
+  width: 100%;
+  height: 29px;
+  background-color: #428068;
+  display: flex;
+  flex-direction: row;
+}
+.reference {
+  font-family: PingFangSC-Medium;
+  font-size: 9px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+
+.background_separated {
+  width: 100%;
+  height: 7px;
+  background-color: #F1F1F1;
+}
+.background_separated_wuxianyijin {
+  width: 100%;
+  height: 34px;
+  background-color: #F1F1F1;
+}
+.background_separated_wuxianyijin_text {
+  font-family: PingFangSC-Medium;
+  font-size: 11px;
+  color: #9E9E9E;
+  letter-spacing: 0;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.userinfo_input1 {
+  width: 100%;
+  height: 168px;
+  background-color: #FFFFFF;
+}
+.userinfo_input2 {
+  width: 100%;
+  height: 94px;
+  background-color: #FFFFFF;
+}
+.wuxianyijin_reference {
+  width: 100%;
+  height: 209px;
+  background-color: #F7F7F7;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+
+.buttons_view {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+}
+.commit_button {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  background-color: #61A189;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+}
+.analysis_button {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  background-color: #428068;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
 }
 
-.usermotto {
-  margin-top: 200px;
-}
+

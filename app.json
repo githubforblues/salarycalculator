@@ -1,12 +1,37 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/home/home"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "薪知",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1E7A5F",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/cal_selected@3x.png",
+        "iconPath": "images/cal_empty@3x.png",
+        "pagePath": "pages/index/index",
+        "text": "薪资预测"
+      },
+      {
+        "selectedIconPath": "images/test_selected@3x.png",
+        "iconPath": "images/test_empty@3x.png",
+        "pagePath": "pages/home/home",
+        "text": "职力测试"
+      },
+      {
+        "selectedIconPath": "images/mine_selected@3x.png",
+        "iconPath": "images/mine_empty@3x.png",
+        "pagePath": "pages/home/home",
+        "text": "我的"
+      }
+    ]
   }
 }

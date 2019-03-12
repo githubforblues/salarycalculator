@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/home/home.js
 var Api = require('../../api/apis.js');
 
 Page({
