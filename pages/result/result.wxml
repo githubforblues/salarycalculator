@@ -1,0 +1,84 @@
+<!--pages/result/result.wxml-->
+<view class='backgroundcolor'>
+  <view class='salaryref_border'>
+    <view class='salaryref extra_margin_left'>
+      <image src='../../images/salaryref@3x.png' class='salaryref_img'></image>
+      <view class='salaryref_text'>你的月薪参考</view>
+    </view>
+    <view class='salarynum extra_margin_left'>
+      <view class='yuan_big'>¥</view>
+      <view class='salary_number'>6083</view>
+      <view class='salary_yuan'>元</view>
+    </view>
+  </view>
+  <view class='salary_range'>
+    <view class='yuan_m'>¥</view>
+    <view class='salary_range_text'>5500 ～ 7200 元</view>
+  </view>
+
+  <view class='beat'>
+    <view class='beatround'>
+      <view class='beatround_text'>你击败了</view>
+      <view class='beatround_number'>12%</view>
+      <view class='beatround_name'>全国应届毕业生</view>
+    </view>
+    <view class='beatround'>
+      <view class='beatround_text'>你击败了</view>
+      <view class='beatround_number'>24%</view>
+      <view class='beatround_name'>上海市应届毕业生</view>
+    </view>
+  </view>
+  
+  <view class='surplusref_and_img'>
+
+    <view>
+      <view class='surplusref_border'>
+        <view class='surplusref extra_margin_left'>
+          <image src='../../images/surplusref@3x.png' class='surplusref_img'></image>
+          <view class='surplusref_text'>月结余参考</view>
+        </view>
+        <view class='surplusnum extra_margin_left'>
+          <view class='yuan_big_gary'>¥</view>
+          <view class='surplus_number'>-230.23</view>
+          <view class='surplus_yuan'>元</view>
+        </view>
+      </view>
+
+      <view class='surplus_range'>
+        <view class='surplus_yuan_big'>¥</view>
+        <view class='surplus_range'>-2040.23 ～ 1244.32 元</view>
+      </view>
+
+      <view>根据你的月结余你被评为</view>
+
+    </view>
+
+    <view>头像</view>
+
+  </view>
+  <view>
+    <view>
+      <view>乞丐级</view>
+      <view></view>
+    </view>
+    <view>
+      <view>穷人级</view>
+      <view></view>
+    </view>
+    <view>
+      <view>小康级</view>
+      <view></view>
+    </view>
+    <view>
+      <view>中产级</view>
+      <view></view>
+    </view>
+    <view>
+      <view>富豪级</view>
+      <view></view>
+    </view>
+  </view>
+  <view>虚线</view>
+  <view>预约个人版</view>
+  <view>个人版将于。。。。。</view>
+</view>

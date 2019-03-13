@@ -1,1 +1,117 @@
 /* pages/home/home.wxss */
+
+.slide-image {
+  position: absolute;
+  height: 130px;
+  width: 313px;
+  border-radius: 15rpx;
+  z-index: 5;
+  opacity: 0.7;
+  top: 13%;
+  margin: 0 20rpx;
+}
+
+swiper {
+  height: 330rpx;
+  margin-bottom: 15px;
+}
+
+.active {
+  opacity: 1;
+  z-index: 10;
+  height: 154px;
+  width: 313px;
+  top: 7%;
+  transition: all 0.2s ease-in 0s;
+}
+
+.plan {
+  width: 100%;
+  height: 50px;
+  background-color: #F3F3F3;
+
+  margin-bottom-color: #fff;
+  margin-bottom: 6px;
+  border-top-color: #c7c7c7;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-color: #c7c7c7;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding-top: 7px;
+  padding-bottom: 6px;
+
+  display: flex;
+  flex-direction: row;
+}
+.plantext {
+  font-family: PingFangSC-Medium;
+  font-size: 8px;
+  color: #9e9e9e;
+  letter-spacing: 0;
+}
+.city_industry {
+  margin-left: 15px;
+
+}
+.city_industry_text {
+  font-family: PingFangSC-Medium;
+  font-size: 13.59px;
+  color: #9e9e9e;
+  letter-spacing: 0;
+}
+.salaryref {
+  margin-left: 27px;
+}
+.salaryref_number{
+  display: flex;
+  flex-direction: row;
+}
+.reftext {
+  font-family: PingFangSC-Medium;
+  font-size: 9px;
+  color: #9e9e9e;
+  letter-spacing: 0;
+  text-align: right;
+}
+.yuan {
+  font-family: PingFangSC-Medium;
+  font-size: 19.02px;
+  color: #9E9E9E;
+  letter-spacing: 0;
+}
+.refnumber {
+  font-family: PingFangSC-Medium;
+  font-size: 19.02px;
+  color: #9E9E9E;
+  letter-spacing: 0;
+  text-align: right;
+  width: 65px;
+}
+.refyuan {
+  font-family: PingFangSC-Medium;
+  font-size: 11px;
+  color: #9E9E9E;
+  letter-spacing: 0;
+  margin-left: 3px;
+  margin-top: 7px;
+}
+.ref_range {
+  display: flex;
+  flex-direction: row;
+}
+.surplusref {
+  margin-left: 16px;
+}
+.rangetext {
+  font-family: PingFangSC-Medium;
+  font-size: 9.06px;
+  color: #9e9e9e;
+  letter-spacing: 0;
+  width: 82px;
+  text-align: right;
+}
+.range_yuan {
+  margin-left: 3px;
+  margin-top: 1px;
+}

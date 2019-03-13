@@ -1,4 +1,4 @@
-// pages/citylist/citylist.js
+// pages/result/result.js
 Page({
 
   /**

@@ -1,18 +1,28 @@
-// pages/citylist/citylist.js
+// pages/home/home.js
+var Api = require('../../api/apis.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    wordlist: [],
+    citylist: [
+      { cityname: '北京市',
+        citytag: 'B'          //必须使用大写
+      },
+      { cityname: '北京市',
+        citytag: 'B'
+      }
+    ]  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    create_capital_letters(this);
   },
 
   /**
@@ -64,3 +74,17 @@ Page({
 
   }
 })
+
+
+function create_capital_letters(that) {
+  var list = []
+  for (var i = 0; i < 26; i++) {
+    list.push(String.fromCharCode(65 + i));
+  }
+  that.setData({
+    wordlist: list
+  })
+}
+
+
+

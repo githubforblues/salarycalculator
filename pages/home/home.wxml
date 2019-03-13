@@ -1,2 +1,47 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+
+<!-- 轮播图 -->
+<swiper autoplay interval="{{interval}}" circular previous-margin="{{leftMargin}}" next-margin="{{rightMargin}}" bindchange="handleChange">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image {{currentIndex == index ? 'active': ''}}" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- <view class='background_separated'></view> -->
+
+<view>
+  <view class='plan' wx:for="{{planlist}}">
+    <view class='city_industry'>
+      <view class='city_industry_text'>{{item.city}}/{{item.industry}}</view>
+      <view class='plantext'>{{item.university}}/{{item.recode}}</view>
+      <view class='plantext'>住房{{item.homecost}}/其他{{item.othercost}}</view>
+    </view>
+    <view class='salaryref'>
+      <view class='reftext'>你的月薪参考</view>
+      <view class='salaryref_number'>
+        <view class='yuan'>¥</view>
+        <view class='refnumber'>{{item.salaryref}}</view>
+        <view class='refyuan'>元</view>
+      </view>
+      <view class='ref_range'>
+        <view class='plantext range_yuan'>¥</view>
+        <view class='rangetext'>{{item.salaryrefrang}} 元</view>
+      </view>
+    </view>
+    <view class='surplusref'>
+      <view class='reftext'>月结余参考</view>
+      <view class='salaryref_number'>
+        <view class='yuan'>¥</view>
+        <view class='refnumber'>{{item.salaryref}}</view>
+        <view class='refyuan'>元</view>
+      </view>
+      <view class='ref_range'>
+        <view class='plantext range_yuan'>¥</view>
+        <view class='rangetext'>{{item.surplusrefrang}} 元</view>
+      </view>
+    </view>
+
+  </view>
+</view>

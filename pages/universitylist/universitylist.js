@@ -1,4 +1,6 @@
 // pages/universitylist/universitylist.js
+var Api = require('../../api/apis.js');
+
 Page({
 
   /**

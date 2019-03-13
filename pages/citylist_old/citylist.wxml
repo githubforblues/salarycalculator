@@ -1,0 +1,13 @@
+<!--pages/citylist/citylist.wxml-->
+
+<view class='wordlist'>
+  <view class='capital_letter' wx:for="{{wordlist}}">{{item}}</view>
+</view>
+
+<view class='wordlist_row'>
+  <view class='capital_letter_row' wx:for="{{wordlist}}" wx:for-item="cl">
+    <view>{{cl}}</view>
+    <view class='row' wx:for="{{citylist}}" wx:if="{{item.citytag == cl}}">{{item.cityname}}</view>
+  </view>
+</view>
+
