@@ -46,10 +46,10 @@
   <view class='background_separated'></view>
 
   <view class='userinfo_input1'>
-    <view class='userinfo_input11'>
+    <view class='userinfo_input11 userinfo_input11_border_margin'>
       <view class='userinfo_input_view'>
         <view class='uititle'>
-          <image src='../../images/home@3x.png' class='ui_home_img'></image>
+          <image src='../../images/city@3x.png' class='ui_city_img'></image>
           <view class='ui_title_text'>期望工作城市</view>
         </view>
         <view class='choice'>
@@ -61,7 +61,7 @@
       </view>
       <view class='userinfo_input_view'>
         <view class='uititle'>
-          <image src='../../images/money@3x.png' class='ui_money_img'></image>
+          <image src='../../images/industry@3x.png' class='ui_industry_img'></image>
           <view class='ui_title_text'>期望从事行业</view>
         </view>
         <view class='choice'>
@@ -72,7 +72,7 @@
         </view>
       </view>
     </view>
-    <view class='userinfo_input12'>
+    <view class='userinfo_input12 userinfo_input_margin'>
       <view class='userinfo_input_view'>
         <view class='uititle'>
           <image src='../../images/home@3x.png' class='ui_home_img'></image>
@@ -87,7 +87,7 @@
       </view>
       <view class='userinfo_input_view'>
         <view class='uititle'>
-          <image src='../../images/money@3x.png' class='ui_money_img'></image>
+          <image src='../../images/record@3x.png' class='ui_record_img'></image>
           <view class='ui_title_text'>最高学历</view>
         </view>
         <view class='choice'>
@@ -103,7 +103,7 @@
   <view class='background_separated'></view>
   
   <view class='userinfo_input2'>
-    <view class='userinfo_input_view'>
+    <view class='userinfo_input_view extra_margin_left_for_homecost'>
       <view class='uititle'>
         <image src='../../images/home@3x.png' class='ui_home_img'></image>
         <view class='ui_title_text'>月度住房开销</view>
@@ -116,7 +116,7 @@
         </view>  
       </view>
     </view>
-    <view class='userinfo_input_view'>
+    <view class='userinfo_input_view extra_margin_left_for_othercost'>
       <view class='uititle'>
         <image src='../../images/money@3x.png' class='ui_money_img'></image>
         <view class='ui_title_text'>月度其他开销</view>
@@ -136,8 +136,30 @@
     <view class='background_separated_wuxianyijin_text'>五险一金缴纳明细参考</view>
   </view>
   <view class='wuxianyijin_reference'>
-    <view></view>
-    <view></view>
+    <view class='wxyj_row'>
+      <view class='wxyj_name'>医疗保险</view>
+      <view class='wxyj_number'>140 ～ 320</view>
+    </view>
+    <view class='wxyj_row'>
+      <view class='wxyj_name'>养老保险</view>
+      <view class='wxyj_number'>140 ～ 320</view>
+    </view>
+    <view class='wxyj_row'>
+      <view class='wxyj_name'>失业保险</view>
+      <view class='wxyj_number'>140 ～ 320</view>
+    </view>
+    <view class='wxyj_row'>
+      <view class='wxyj_name'>工伤保险</view>
+      <view class='wxyj_number'>140 ～ 320</view>
+    </view>
+    <view class='wxyj_row'>
+      <view class='wxyj_name'>生育保险</view>
+      <view class='wxyj_number'>140 ～ 320</view>
+    </view>
+    <view class='wxyj_row_last'>
+      <view class='wxyj_name'>公积金比例</view>
+      <view class='wxyj_number_last'>12%</view>
+    </view>
   </view>
 </view>
 

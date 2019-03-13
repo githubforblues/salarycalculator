@@ -108,10 +108,25 @@
   width: 100%;
   height: 168px;
   background-color: #FFFFFF;
+  margin-bottom: 10px;
 }
 .userinfo_input11 {
   display: flex;
   flex-direction: row;
+}
+.userinfo_input11_border_margin {
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-bottom: 10px;
+
+  border-bottom-style: solid;
+  border-bottom-color: #E6E6E6;
+  border-bottom-width: 1px;
+}
+.userinfo_input_margin {
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-bottom: 10px;
 }
 .userinfo_input12 {
   display: flex;
@@ -128,24 +143,45 @@
 .userinfo_input_view {
   margin-top: 14px;
   /* margin-bottom: 26px; */
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
   flex: 1;
 }
 .userinfo_input_view .uititle {
   display: flex;
   flex-direction: row;
 }
-.userinfo_input_view .ui_home_img {
+.userinfo_input_view .ui_city_img {
   width: 13px;
+  height: 16px;
+  margin-right: 7px;
+  margin-left: 3px;
+  margin-top: 2px;
+}
+.userinfo_input_view .ui_record_img {
+  width: 16px;
   height: 13px;
   margin-right: 7px;
   margin-left: 3px;
   margin-top: 2px;
 }
+.userinfo_input_view .ui_industry_img {
+  width: 10px;
+  height: 18px;
+  margin-right: 10px;
+  margin-left: 5px;
+  margin-top: 2px;
+}
 .userinfo_input_view .ui_money_img {
   width: 12px;
   height: 14px;
+  margin-right: 7px;
+  margin-left: 3px;
+  margin-top: 2px;
+}
+.userinfo_input_view .ui_home_img {
+  width: 13px;
+  height: 13px;
   margin-right: 7px;
   margin-left: 3px;
   margin-top: 2px;
@@ -235,6 +271,12 @@
   text-align: right;
   width: 80px;
 }
+.extra_margin_left_for_homecost {
+  padding-left: 32px;
+}
+.extra_margin_left_for_othercost {
+  padding-left: 12px;
+}
 
 
 .tax_reference {
@@ -251,6 +293,7 @@
   letter-spacing: 0;
   text-align: center;
   display: flex;
+
   align-items: center;
   justify-content: center;
   flex: 1;
@@ -294,8 +337,56 @@
   width: 100%;
   height: 209px;
   background-color: #FFFFFF;
-}
+  margin-top: 9px;
 
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+.wxyj_row {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 8px;
+  padding-top: 4px;
+  width: 310px;
+
+  border-bottom-style: solid;
+  border-bottom-color: #EAEAEA;
+  border-bottom-width: 1px;
+}
+.wxyj_row_last {
+  display: flex;
+  flex-direction: row;
+  padding-top: 4px;
+  width: 310px;
+}
+.wxyj_name {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #9E9E9E;
+  letter-spacing: 0;
+}
+.wxyj_number {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #9E9E9E;
+  letter-spacing: 0;
+  text-align: right;
+  float: right;
+  width: 250px;
+}
+.wxyj_number_last {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #9E9E9E;
+  letter-spacing: 0;
+  text-align: right;
+  float: right;
+  width: 235px;
+}
 
 
 .buttons_view {

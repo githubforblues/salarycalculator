@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/citylist/citylist",
+    "pages/universitylist/universitylist"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,7 +25,7 @@
       {
         "selectedIconPath": "images/test_selected@3x.png",
         "iconPath": "images/test_empty@3x.png",
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/citylist/citylist",
         "text": "职力测试"
       },
       {
