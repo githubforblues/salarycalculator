@@ -54,8 +54,8 @@
             <view class='ui_title_text'>期望工作城市</view>
           </view>
           <view class='choice'>
-            <view class='ui_choice'>
-              <view class='ui_choice_text_city'>{{input_city}}</view>
+            <view class='ui_choice' bindtap="select_city">
+              <view class='ui_choice_text_city'>{{input_city_string}}</view>
               <image src="../../images/arrow_input@3x.png" class='arrow_input'></image>
             </view>
           </view>
@@ -66,8 +66,8 @@
             <view class='ui_title_text'>期望从事行业</view>
           </view>
           <view class='choice'>
-            <view class='ui_choice'>
-              <view class='ui_choice_text_industry'>{{input_industry}}</view>
+            <view class='ui_choice' bindtap="select_industry">
+              <view class='ui_choice_text_industry'>{{input_industry_string}}</view>
               <image src="../../images/arrow_input@3x.png" class='arrow_input'></image>
             </view>
           </view>
@@ -168,7 +168,7 @@
 
   <view class='buttons_view'>
     <view class='commit_button'>保存方案</view>
-    <view class='analysis_button'>方案分析</view>
+    <view class='analysis_button' bindtap="analysis">方案分析</view>
   </view>
 
 

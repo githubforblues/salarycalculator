@@ -1,17 +1,14 @@
-// pages/citylist/citylist.js
+// pages/industrylist/industrylist.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    provinceslist: ['直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '浙江省', '浙江省', '浙江省', '浙江省',],
-    citylist: ['北京市', '上海市', '天津市', '重庆市', '北京市', '上海市', '天津市', '重庆市', '北京市', '上海市', '天津市', '重庆市', '北京市', '上海市', '天津市', '重庆市', '北京市', '上海市', '天津市', '重庆市'],
-    select_provinces_id: -1,
-    select_city_id: -1,
-    select_city_string: '',
-    isShade: false,
-    iscitylistShow: false,
+    // 列表应该需要提供id和string两个值
+    industrylist: ['高科技/IT', '金融/Finance', '制造/Manufaturing','服务/Service'],
+    industry: -1,
+    industry_string: '',
   },
 
   /**
@@ -73,18 +70,12 @@ Page({
 
   // 点击事件处理
 
-  select_provinces: function (e) {
-    var id = 1    // 暂时写死。等列表中出现id字段时，通过自定义属性获取该值
-    this.setData({
-      isShade: true,
-      iscitylistShow: true,
-      select_provinces_id: id,
-    })
-  },
-
-  select_city: function (e) {
-    var id = 1    // 暂时写死。等列表中出现id字段时，通过自定义属性获取该值
+  select_industry: function (e) {
+    // 参数暂时写死
+    var id = 1
+    // 参数暂时写死
     var string = e.currentTarget.dataset.text
+    string = string.split("/")[0]
 
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];   //当前页面
@@ -92,13 +83,12 @@ Page({
 
     //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
     prevPage.setData({
-      input_city: id,
-      input_city_string: string,
+      input_industry: id,
+      input_industry_string: string,
     })
 
     wx.navigateBack();   //返回上一个页面
-  },
-
-  
-
+  }
 })
+
+

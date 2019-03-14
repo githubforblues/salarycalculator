@@ -253,8 +253,8 @@
   font-size: 25px;
   color: #7A7A7A;
   letter-spacing: 0;
-  text-align: right;
-  /* width: 102px; */
+  text-align: center;
+  width: 110px;
 }
 .userinfo_input_view .ui_choice_text_university {
   font-family: PingFangSC-Medium;

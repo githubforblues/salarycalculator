@@ -1,0 +1,7 @@
+<!--pages/industrylist/industrylist.wxml-->
+<view class='container'>
+  <view class='industrylist'>
+    <view wx:for="{{industrylist}}" class='industry_text' bindtap="select_industry" data-text="{{item}}">{{item}}</view>
+  </view>
+</view>
+

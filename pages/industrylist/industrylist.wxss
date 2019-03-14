@@ -1,9 +1,13 @@
+/* pages/industrylist/industrylist.wxss */
+
+/* pages/citylist/citylist.wxss */
+
 /* pages/citylist/citylist.wxss */
 
 .container {
   position: relative;
 }
-.provinces {
+.industrylist {
   position: absolute;
   z-index: 1;
   top: 0px;
@@ -11,7 +15,7 @@
   width: 100%;
   background-color: #FFFFFF;
 }
-.provinces_text {
+.industry_text {
   font-family: PingFangSC-Regular;
   font-size: 14px;
   color: #080808;
@@ -76,4 +80,7 @@
 .citylisthide {
   display: none;
 }
+
+
+
 

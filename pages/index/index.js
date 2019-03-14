@@ -8,8 +8,10 @@ Page({
    */
   data: {
     input_count: 6,
-    input_city: '上海市',
-    input_industry: '高科技/IT',
+    input_city: -1,
+    input_city_string: '',
+    input_industry: -1,
+    input_industry_string: '',
     input_university: -1,
     input_university_string: '江西财经大学',
     input_record: -1,
@@ -115,8 +117,21 @@ Page({
   // 点击跳转到学校选择页
   select_university: function() {
     wx.navigateTo({ url: "/pages/citylist/citylist" })
-  }
+  },
+  // 点击跳转到城市选择页
+  select_city: function() {
+    wx.navigateTo({ url: "/pages/citylist/citylist" })
+  },
+  // 点击跳转到行业选择页
+  select_industry: function () {
+    wx.navigateTo({ url: "/pages/industrylist/industrylist" })
+  },
+  // 点击跳转到方案分析页
+  analysis: function() {
+    wx.navigateTo({ url: "/pages/result/result" })
+  },
 })
+
 
 function getrecordstring(id) {
   var list = ['专科','本科','硕士','博士及以上']

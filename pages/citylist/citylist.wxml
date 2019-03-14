@@ -1,12 +1,12 @@
 <!--pages/citylist/citylist.wxml-->
 <view class='container'>
   <view class='provinces'>
-    <view wx:for="{{provinceslist}}" class='provinces_text'>{{item}}</view>
+    <view wx:for="{{provinceslist}}" class='provinces_text' bindtap="select_provinces">{{item}}</view>
   </view>
 
-  <view class='shade'></view>
+  <view class="shade {{isShade ? '' : 'shadehide'}}"></view>
 
-  <view class='citylist'>
-    <view wx:for="{{citylist}}" class='city_text'>{{item}}</view>
+  <view class="citylist {{iscitylistShow ? '' : 'citylisthide'}}">
+    <view wx:for="{{citylist}}" class='city_text'  bindtap="select_city" data-text="{{item}}">{{item}}</view>
   </view>
 </view>
