@@ -221,6 +221,8 @@
   display: flex;
   flex-direction: row;
   width: 122px;
+  height: 32px;
+  position: relative;
 }
 .userinfo_input_view .ui_number {
   font-family: PingFangSC-Medium;
@@ -260,7 +262,7 @@
   color: #7A7A7A;
   letter-spacing: 0;
   text-align: right;
-  margin-top: 10px;
+  margin-top: 5px;
   width: 110px;
 }
 .userinfo_input_view .ui_choice_text_record {
@@ -276,6 +278,13 @@
 }
 .extra_margin_left_for_othercost {
   padding-left: 12px;
+}
+.arrow_input {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  top: 12px;
+  left: 125px;
 }
 
 
@@ -424,4 +433,86 @@
   flex: 1;
 }
 
+
+.container {
+  position: relative;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+.shade {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.record_select {
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  width: 100vw;
+  height: 185px;
+  background-color: #FFFFFF;
+}
+
+
+
+/* 最高学历选择栏显示控制 */
+.isHide {
+  display: none;
+}
+.rs_ok_or_cancel {
+  display: flex;
+  flex-direction: row;
+
+  border-bottom-style: solid;
+  border-bottom-color: #D4D4D4;
+  border-bottom-width: 1px;
+
+  height: 49px;
+}
+.rs_cancel_buttom {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #454545;
+  letter-spacing: 0;
+  margin-left: 16px;
+  margin-top: 14px;
+  flex: 1;
+}
+.rs_ok_buttom {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #49A388;
+  letter-spacing: 0;
+  text-align: right;
+  flex: 1;
+  margin-right: 16px;
+  margin-top: 14px;
+}
+.rs_choice view {
+  font-family: PingFangSC-Regular;
+  font-size: 19px;
+  letter-spacing: 0;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.chosen {
+  color: #49A388;
+}
+.notchosen {
+  color: #A4A4A4;
+}
+.extra_ir_textstyle {
+  font-size: 22px !important;
+  width: 110px !important;
+}
 

@@ -1,172 +1,189 @@
 <!--pages/index/index.wxml-->
-<view>
-  <view class='salaryandsurplus'>
+<view class='container'>
+  <view>
+    <view class='salaryandsurplus'>
 
-    <view class='salaryandsurplusview'>
-      <view class='sstitle'>
-        <image src='../../images/salaryref@3x.png' class='ss_salaryref_img'></image>
-        <view class='ss_title_text'>你的月薪参考</view>
+      <view class='salaryandsurplusview'>
+        <view class='sstitle'>
+          <image src='../../images/salaryref@3x.png' class='ss_salaryref_img'></image>
+          <view class='ss_title_text'>你的月薪参考</view>
+        </view>
+        <view class='ssrefernumber'>
+          <view class='ss_yuan_char'>¥</view>
+          <view class='ss_number'>6803</view>
+          <view class='ss_yuan'>元</view>
+        </view>
+        <view class='ssreferrange'>
+          <view class='ss_yuan_char_small'>¥</view>
+          <view class='ss_number_range'>5500 ～ 7200 元</view>
+        </view>
       </view>
-      <view class='ssrefernumber'>
-        <view class='ss_yuan_char'>¥</view>
-        <view class='ss_number'>6803</view>
-        <view class='ss_yuan'>元</view>
+
+      <view class='salaryandsurplusview'>
+        <view class='sstitle'>
+          <image src='../../images/surplusref@3x.png' class='ss_surplusref_img'></image>
+          <view class='ss_title_text'>月结余参考</view>
+        </view>
+        <view class='ssrefernumber'>
+          <view class='ss_yuan_char'>¥</view>
+          <view class='ss_number'>-200</view>
+          <view class='ss_yuan'>元</view>
+        </view>
+        <view class='ssreferrange'>
+          <view class='ss_yuan_char_small'>¥</view>
+          <view class='ss_number_range'>-2500 ～ 200 元</view>
+        </view>
       </view>
-      <view class='ssreferrange'>
-        <view class='ss_yuan_char_small'>¥</view>
-        <view class='ss_number_range'>5500 ～ 7200 元</view>
+
+    </view>
+
+    <view class='tax_reference'>
+      <view class='reference'>个税: 0</view>
+      <view class='reference'>社保: 0</view>
+      <view class='reference'>公积金: 0</view>
+      <view></view>
+    </view>
+
+    <view class='background_separated'></view>
+
+    <view class='userinfo_input1'>
+      <view class='userinfo_input11 userinfo_input11_border_margin'>
+        <view class='userinfo_input_view'>
+          <view class='uititle'>
+            <image src='../../images/city@3x.png' class='ui_city_img'></image>
+            <view class='ui_title_text'>期望工作城市</view>
+          </view>
+          <view class='choice'>
+            <view class='ui_choice'>
+              <view class='ui_choice_text_city'>{{input_city}}</view>
+              <image src="../../images/arrow_input@3x.png" class='arrow_input'></image>
+            </view>
+          </view>
+        </view>
+        <view class='userinfo_input_view'>
+          <view class='uititle'>
+            <image src='../../images/industry@3x.png' class='ui_industry_img'></image>
+            <view class='ui_title_text'>期望从事行业</view>
+          </view>
+          <view class='choice'>
+            <view class='ui_choice'>
+              <view class='ui_choice_text_industry'>{{input_industry}}</view>
+              <image src="../../images/arrow_input@3x.png" class='arrow_input'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='userinfo_input12 userinfo_input_margin'>
+        <view class='userinfo_input_view'>
+          <view class='uititle'>
+            <image src='../../images/home@3x.png' class='ui_home_img'></image>
+            <view class='ui_title_text'>毕业院校</view>
+          </view>
+          <view class='choice'>
+            <view class='ui_choice' bindtap="select_university">
+              <view class='ui_choice_text_university'>{{input_university_string}}</view>
+              <image src="../../images/arrow_input@3x.png" class='arrow_input'></image>
+            </view>
+          </view>
+        </view>
+        <view class='userinfo_input_view'>
+          <view class='uititle'>
+            <image src='../../images/record@3x.png' class='ui_record_img'></image>
+            <view class='ui_title_text'>最高学历</view>
+          </view>
+          <view class='choice'>
+            <view class='ui_choice' bindtap="select_record">
+              <view class="ui_choice_text_record {{input_record == 3 ? 'extra_ir_textstyle' : ''}}">{{input_record_string}}</view>
+              <image src="../../images/arrow_input@3x.png" class='arrow_input'></image>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
 
-    <view class='salaryandsurplusview'>
-      <view class='sstitle'>
-        <image src='../../images/surplusref@3x.png' class='ss_surplusref_img'></image>
-        <view class='ss_title_text'>月结余参考</view>
-      </view>
-      <view class='ssrefernumber'>
-        <view class='ss_yuan_char'>¥</view>
-        <view class='ss_number'>-200</view>
-        <view class='ss_yuan'>元</view>
-      </view>
-      <view class='ssreferrange'>
-        <view class='ss_yuan_char_small'>¥</view>
-        <view class='ss_number_range'>-2500 ～ 1200 元</view>
-      </view>
-    </view>
+    <view class='background_separated'></view>
 
-  </view>
-
-  <view class='tax_reference'>
-    <view class='reference'>个税: 0</view>
-    <view class='reference'>社保: 0</view>
-    <view class='reference'>公积金: 0</view>
-    <view></view>
-  </view>
-
-  <view class='background_separated'></view>
-
-  <view class='userinfo_input1'>
-    <view class='userinfo_input11 userinfo_input11_border_margin'>
-      <view class='userinfo_input_view'>
-        <view class='uititle'>
-          <image src='../../images/city@3x.png' class='ui_city_img'></image>
-          <view class='ui_title_text'>期望工作城市</view>
-        </view>
-        <view class='choice'>
-          <view class='ui_choice'>
-            <view class='ui_choice_text_city'>上海市</view>
-            <view class='ui_yuan'></view>
-          </view>  
-        </view>
-      </view>
-      <view class='userinfo_input_view'>
-        <view class='uititle'>
-          <image src='../../images/industry@3x.png' class='ui_industry_img'></image>
-          <view class='ui_title_text'>期望从事行业</view>
-        </view>
-        <view class='choice'>
-          <view class='ui_choice'>
-            <view class='ui_choice_text_industry'>高科技/IT</view>
-            <view class='ui_yuan'></view>
-          </view>  
-        </view>
-      </view>
-    </view>
-    <view class='userinfo_input12 userinfo_input_margin'>
-      <view class='userinfo_input_view'>
+    <view class='userinfo_input2'>
+      <view class='userinfo_input_view extra_margin_left_for_homecost'>
         <view class='uititle'>
           <image src='../../images/home@3x.png' class='ui_home_img'></image>
-          <view class='ui_title_text'>毕业院校</view>
+          <view class='ui_title_text'>月度住房开销</view>
         </view>
-        <view class='choice'>
-          <view class='ui_choice'>
-            <view class='ui_choice_text_university'>中国科技大学</view>
-            <view class='ui_yuan'></view>
-          </view>  
+        <view class='cost'>
+          <view class='ui_yuan_char'>¥</view>
+          <view class='ui_input'>
+            <view class='ui_number'>{{input_homecost}}</view>
+            <view class='ui_yuan'>元</view>
+          </view>
         </view>
       </view>
-      <view class='userinfo_input_view'>
+      <view class='userinfo_input_view extra_margin_left_for_othercost'>
         <view class='uititle'>
-          <image src='../../images/record@3x.png' class='ui_record_img'></image>
-          <view class='ui_title_text'>最高学历</view>
+          <image src='../../images/money@3x.png' class='ui_money_img'></image>
+          <view class='ui_title_text'>月度其他开销</view>
         </view>
-        <view class='choice'>
-          <view class='ui_choice'>
-            <view class='ui_choice_text_record'>本科</view>
-            <view class='ui_yuan'></view>
-          </view>  
+        <view class='cost'>
+          <view class='ui_yuan_char'>¥</view>
+          <view class='ui_input'>
+            <view class='ui_number'>{{input_othercost}}</view>
+            <view class='ui_yuan'>元</view>
+          </view>
         </view>
       </view>
     </view>
-  </view>
-  
-  <view class='background_separated'></view>
-  
-  <view class='userinfo_input2'>
-    <view class='userinfo_input_view extra_margin_left_for_homecost'>
-      <view class='uititle'>
-        <image src='../../images/home@3x.png' class='ui_home_img'></image>
-        <view class='ui_title_text'>月度住房开销</view>
-      </view>
-      <view class='cost'>
-        <view class='ui_yuan_char'>¥</view>
-        <view class='ui_input'>
-          <view class='ui_number'>800</view>
-          <view class='ui_yuan'>元</view>
-        </view>  
-      </view>
+
+    <view class='background_separated_wuxianyijin'>
+      <image src='../../images/wuxianyijin@3x.png' class='background_separated_img'></image>
+      <view class='background_separated_wuxianyijin_text'>五险一金缴纳明细参考</view>
     </view>
-    <view class='userinfo_input_view extra_margin_left_for_othercost'>
-      <view class='uititle'>
-        <image src='../../images/money@3x.png' class='ui_money_img'></image>
-        <view class='ui_title_text'>月度其他开销</view>
+    <view class='wuxianyijin_reference'>
+      <view class='wxyj_row'>
+        <view class='wxyj_name'>医疗保险</view>
+        <view class='wxyj_number'>140 ～ 320</view>
       </view>
-      <view class='cost'>
-        <view class='ui_yuan_char'>¥</view>
-        <view class='ui_input'>
-          <view class='ui_number'>1000</view>
-          <view class='ui_yuan'>元</view>
-        </view>  
+      <view class='wxyj_row'>
+        <view class='wxyj_name'>养老保险</view>
+        <view class='wxyj_number'>140 ～ 320</view>
+      </view>
+      <view class='wxyj_row'>
+        <view class='wxyj_name'>失业保险</view>
+        <view class='wxyj_number'>140 ～ 320</view>
+      </view>
+      <view class='wxyj_row'>
+        <view class='wxyj_name'>工伤保险</view>
+        <view class='wxyj_number'>140 ～ 320</view>
+      </view>
+      <view class='wxyj_row'>
+        <view class='wxyj_name'>生育保险</view>
+        <view class='wxyj_number'>140 ～ 320</view>
+      </view>
+      <view class='wxyj_row_last'>
+        <view class='wxyj_name'>公积金比例</view>
+        <view class='wxyj_number_last'>12%</view>
       </view>
     </view>
   </view>
 
-  <view class='background_separated_wuxianyijin'>
-    <image src='../../images/wuxianyijin@3x.png' class='background_separated_img'></image>
-    <view class='background_separated_wuxianyijin_text'>五险一金缴纳明细参考</view>
+  <view class='background_separated_bottom'></view>
+
+  <view class='buttons_view'>
+    <view class='commit_button'>保存方案</view>
+    <view class='analysis_button'>方案分析</view>
   </view>
-  <view class='wuxianyijin_reference'>
-    <view class='wxyj_row'>
-      <view class='wxyj_name'>医疗保险</view>
-      <view class='wxyj_number'>140 ～ 320</view>
-    </view>
-    <view class='wxyj_row'>
-      <view class='wxyj_name'>养老保险</view>
-      <view class='wxyj_number'>140 ～ 320</view>
-    </view>
-    <view class='wxyj_row'>
-      <view class='wxyj_name'>失业保险</view>
-      <view class='wxyj_number'>140 ～ 320</view>
-    </view>
-    <view class='wxyj_row'>
-      <view class='wxyj_name'>工伤保险</view>
-      <view class='wxyj_number'>140 ～ 320</view>
-    </view>
-    <view class='wxyj_row'>
-      <view class='wxyj_name'>生育保险</view>
-      <view class='wxyj_number'>140 ～ 320</view>
-    </view>
-    <view class='wxyj_row_last'>
-      <view class='wxyj_name'>公积金比例</view>
-      <view class='wxyj_number_last'>12%</view>
+
+
+  <!-- 用于最高学历选择 -->
+  <view class="shade {{isHide ? 'isHide' : ''}}" bindtap="cancel_selector" catchtouchmove="true"></view>
+  <view class="record_select {{isHide ? 'isHide' : ''}}" catchtouchmove="true">
+    <!-- <view class='rs_ok_or_cancel'>
+      <view class='rs_cancel_buttom' bindtap="cancel_selector">取消</view>
+      <view class='rs_ok_buttom'>确定</view>
+    </view> -->
+    <view class='rs_choice'>
+      <view class="{{input_record == 0 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='0'>专科</view>
+      <view class="{{input_record == 1 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='1'>本科</view>
+      <view class="{{input_record == 2 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='2'>硕士</view>
+      <view class="{{input_record == 3 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='3'>博士及以上</view>
     </view>
   </view>
 </view>
-
-<view class='background_separated_bottom'></view>
-
-<view class='buttons_view'>
-  <view class='commit_button'>保存方案</view>
-  <view class='analysis_button'>方案分析</view>
-</view>
-
