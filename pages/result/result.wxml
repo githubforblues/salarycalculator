@@ -46,39 +46,42 @@
 
       <view class='surplus_range'>
         <view class='surplus_yuan_big'>¥</view>
-        <view class='surplus_range'>-2040.23 ～ 1244.32 元</view>
+        <view class='surplus_range_text'>-2040.23 ～ 1244.32 元</view>
       </view>
 
-      <view>根据你的月结余你被评为</view>
+      <view class='return_text'>根据你的月结余你被评为</view>
 
     </view>
 
-    <view>头像</view>
+    <view class='return_img'>啦啦啦</view>
 
   </view>
-  <view>
-    <view>
-      <view>乞丐级</view>
-      <view></view>
+  <view class='levellist'>
+    <view class='level'>
+      <view class='level_name'>乞丐级</view>
+      <image src='../../images/level1_qigai_hl@3x.png' class='level_img level1_img'></image>
     </view>
-    <view>
-      <view>穷人级</view>
-      <view></view>
+    <view class='level'>
+      <view class='level_name'>穷人级</view>
+      <image src='../../images/level2_qiongren_hl@3x.png' class='level_img'></image>
     </view>
-    <view>
-      <view>小康级</view>
-      <view></view>
+    <view class='level'>
+      <view class='level_name'>小康级</view>
+      <image src='../../images/level3_xiaokang_hl@3x.png' class='level_img'></image>
     </view>
-    <view>
-      <view>中产级</view>
-      <view></view>
+    <view class='level'>
+      <view class='level_name'>中产级</view>
+      <image src='../../images/level4_zhongchan_hl@3x.png' class='level_img'></image>
     </view>
-    <view>
-      <view>富豪级</view>
-      <view></view>
+    <view class='level'>
+      <view class='level_name'>富豪级</view>
+      <image src='../../images/level5_fuhao_hl@3x.png' class='level_img level5_img'></image>
     </view>
   </view>
-  <view>虚线</view>
-  <view>预约个人版</view>
-  <view>个人版将于。。。。。</view>
+
+  <view class='long_dotted_line'></view>
+
+  <button class='order'>预约个人版</button>
+
+  <view class='private_version_info'>个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于</view>
 </view>

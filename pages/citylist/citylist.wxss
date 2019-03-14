@@ -1,1 +1,72 @@
 /* pages/citylist/citylist.wxss */
+
+.container {
+  position: relative;
+}
+.provinces {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+.provinces_text {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #080808;
+  letter-spacing: 0;
+
+  height: 48px;
+  margin-left: 10px;
+
+  border-bottom-style: solid;
+  border-bottom-color: #F6F6F6;
+  border-bottom-width: 1px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.city_text {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #080808;
+  letter-spacing: 0;
+
+  height: 48px;
+  margin-left: 10px;
+
+  border-bottom-style: solid;
+  border-bottom-color: #F6F6F6;
+  border-bottom-width: 1px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.citylist {
+  position: absolute;
+  z-index: 3;
+  top: 0px;
+  left: 65px;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.shade {
+  opacity: 0.5;
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 2;
+}
+

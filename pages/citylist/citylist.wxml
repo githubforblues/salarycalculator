@@ -1,2 +1,12 @@
 <!--pages/citylist/citylist.wxml-->
-<text>pages/citylist/citylist.wxml</text>
+<view class='container'>
+  <view class='provinces'>
+    <view wx:for="{{provinceslist}}" class='provinces_text'>{{item}}</view>
+  </view>
+
+  <view class='shade'></view>
+
+  <view class='citylist'>
+    <view wx:for="{{citylist}}" class='city_text'>{{item}}</view>
+  </view>
+</view>

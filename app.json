@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/citylist/citylist",
     "pages/result/result",
     "pages/home/home",
     "pages/index/index",
-    "pages/citylist/citylist",
     "pages/universitylist/universitylist"
   ],
   "window": {
@@ -26,7 +26,7 @@
       {
         "selectedIconPath": "images/test_selected@3x.png",
         "iconPath": "images/test_empty@3x.png",
-        "pagePath": "pages/result/result",
+        "pagePath": "pages/citylist/citylist",
         "text": "职力测试"
       },
       {

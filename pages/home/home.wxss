@@ -43,22 +43,26 @@ swiper {
 
   display: flex;
   flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
 }
 .plantext {
   font-family: PingFangSC-Medium;
   font-size: 8px;
   color: #9e9e9e;
   letter-spacing: 0;
+  margin-bottom: 3px;
 }
 .city_industry {
-  margin-left: 15px;
-
+  /* margin-left: 15px; */
 }
 .city_industry_text {
   font-family: PingFangSC-Medium;
   font-size: 13.59px;
   color: #9e9e9e;
   letter-spacing: 0;
+  margin-bottom: 3px;
 }
 .salaryref {
   margin-left: 27px;
