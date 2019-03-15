@@ -1,2 +1,16 @@
 <!--pages/universitylist/universitylist.wxml-->
-<text>pages/universitylist/universitylist.wxml</text>
+<!--pages/citylist/citylist.wxml-->
+<view class='container'>
+  <view class='provinces'>
+    <view wx:for="{{provinceslist}}" class='provinces_text' bindtap="select_provinces">{{item}}</view>
+  </view>
+  <view class="shade {{isShade ? '' : 'shadehide'}}" bindtap="shadehide"></view>
+
+  <scroll-view scroll-y class="citylist {{iscitylistShow ? '' : 'citylisthide'}} {{iscitylistrestrain ? 'citylistscroll_restrain' : ''}}">
+    <view wx:for="{{citylist}}" class='city_text'  bindtap="select_city" data-text="{{item}}">{{item}}</view>
+  </scroll-view>
+
+  <scroll-view scroll-y class="universitylist {{isuniversitylistShow ? '' : 'universitylisthide'}}">
+    <view wx:for="{{universitylist}}" class='university_text'  bindtap="select_university" data-text="{{item}}">{{item}}</view>
+  </scroll-view>
+</view>

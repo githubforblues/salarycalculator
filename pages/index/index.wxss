@@ -226,11 +226,14 @@
 }
 .userinfo_input_view .ui_number {
   font-family: PingFangSC-Medium;
-  font-size: 30px;
+  font-size: 29px;
   color: #7A7A7A;
   letter-spacing: 0;
   text-align: right;
   width: 102px;
+  margin-top: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 .userinfo_input_view .ui_yuan {
   font-family: PingFangSC-Medium;
@@ -258,12 +261,21 @@
 }
 .userinfo_input_view .ui_choice_text_university {
   font-family: PingFangSC-Medium;
-  font-size: 16px;
+  font-size: 23px;
   color: #7A7A7A;
   letter-spacing: 0;
-  text-align: right;
   margin-top: 5px;
+  text-align: center;
   width: 110px;
+}
+.userinfo_input_view .ui_choice_text_university_longstring {
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #7A7A7A;
+  letter-spacing: 0;
+  /* margin-top: 12px; */
+  text-align: center;
+  width: 130px;
 }
 .userinfo_input_view .ui_choice_text_record {
   font-family: PingFangSC-Medium;
@@ -436,8 +448,6 @@
 
 .container {
   position: relative;
-  height: 0px;
-  margin: 0px;
   padding: 0px;
 }
 .shade {
@@ -516,3 +526,18 @@
   width: 110px !important;
 }
 
+
+/* 输入数字防止点击其他选项 */
+.selectlockshade {
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+}
+.selectlock {
+  display: none;
+}

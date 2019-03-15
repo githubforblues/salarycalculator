@@ -27,7 +27,7 @@
       {
         "selectedIconPath": "images/test_selected@3x.png",
         "iconPath": "images/test_empty@3x.png",
-        "pagePath": "pages/universitylist/universitylist",
+        "pagePath": "pages/index/index",
         "text": "职力测试"
       },
       {

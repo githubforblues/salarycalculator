@@ -13,11 +13,12 @@ Page({
     input_industry: -1,
     input_industry_string: '',
     input_university: -1,
-    input_university_string: '江西财经大学',
+    input_university_string: '',
+    university_longstring: false,
     input_record: -1,
     input_record_string: '',
-    input_homecost: 800,
-    input_othercost: 1000,
+    input_homecost: '',
+    input_othercost: '',
 
     output_salaryref: 6803,
     output_salaryref_range: '5500 ~ 7200 元',
@@ -25,7 +26,7 @@ Page({
     output_surplusref_range: '-2500 ~ 200 元',
 
     isHide: true,
-    trtr: true,
+    isSelectLock: false,
   },
 
   /**
@@ -116,7 +117,7 @@ Page({
 
   // 点击跳转到学校选择页
   select_university: function() {
-    wx.navigateTo({ url: "/pages/citylist/citylist" })
+    wx.navigateTo({ url: "/pages/universitylist/universitylist" })
   },
   // 点击跳转到城市选择页
   select_city: function() {
@@ -129,8 +130,59 @@ Page({
   // 点击跳转到方案分析页
   analysis: function() {
     wx.navigateTo({ url: "/pages/result/result" })
+    this.reset()      // 这个操作放到接口返回请求之后回调，体验更佳
   },
+
+  // 输入数字时防止点击到其他选择项
+  select_lock: function() {
+    this.setData({
+      isSelectLock: true,
+    })
+  },
+  select_unlock: function () {
+    this.setData({
+      isSelectLock: false,
+    })
+  },
+
+  // 把输入数值传递到data中
+  inputnumber_homecost: function(e) {
+    var num = e.detail.value
+    if(num[0] == 0){
+      num = num.split('0')[1]
+    }
+    this.setData({
+      input_homecost: num
+    })
+  },
+  inputnumber_othercost: function (e) {
+    var num = e.detail.value
+    if (num[0] == 0) {
+      num = num.split('0')[1]
+    }
+    this.setData({
+      input_othercost: num
+    })
+  },
+
+  // 重置表单
+  reset: function() {
+    this.setData({
+      input_city: -1,
+      input_city_string: '',
+      input_industry: -1,
+      input_industry_string: '',
+      input_university: -1,
+      input_university_string: '',
+      university_longstring: false,
+      input_record: -1,
+      input_record_string: '',
+      input_homecost: '',
+      input_othercost: '',
+    })
+  }
 })
+
 
 
 function getrecordstring(id) {

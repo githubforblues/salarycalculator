@@ -54,6 +54,9 @@
   left: 65px;
   width: 100%;
   background-color: #FFFFFF;
+
+  height: 100vh;
+  overflow: hidden
 }
 
 .shade {

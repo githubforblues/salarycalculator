@@ -5,6 +5,7 @@
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 9px;
+  height: 100%;
 }
 
 .salaryref {
@@ -310,5 +311,4 @@
   color: #E2E2E2;
   letter-spacing: 0;
   margin-top: 9px;
-  padding-bottom: 20px;
 }
