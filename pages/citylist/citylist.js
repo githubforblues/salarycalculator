@@ -6,13 +6,15 @@ Page({
    */
   data: {
     // provinceslist: ['直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '浙江省', '浙江省', '浙江省', '浙江省',],
-    provinceslist: ['直辖市', '江苏省', '浙江省'], 
+    provinceslist: ['直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省', '直辖市', '江苏省', '浙江省'], 
     citylist: ['北京市', '上海市', '天津市', '重庆市', '北京市', '上海市', '天津市', '重庆市', '北京市', '上海市', '天津市', '重庆市', '北京市', '上海市', '天津市', '重庆市', '北京市', '上海市', '天津市', '重庆市'],
     select_provinces_id: -1,
     select_city_id: -1,
     select_city_string: '',
     isShade: false,
     iscitylistShow: false,
+    scroll_y: true,
+    overflow: "auto",
   },
 
   /**
@@ -80,6 +82,8 @@ Page({
       isShade: true,
       iscitylistShow: true,
       select_provinces_id: id,
+      overflow: "hidden",
+      scroll_y: false,
     })
   },
 
@@ -105,6 +109,8 @@ Page({
       isShade: false,
       iscitylistShow: false,
       select_provinces_id: -1,
+      overflow: "auto",
+      scroll_y: true,
     })
   },
 

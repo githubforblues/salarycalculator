@@ -1,12 +1,13 @@
 <!--pages/universitylist/universitylist.wxml-->
 <!--pages/citylist/citylist.wxml-->
 <view class='container'>
-  <view class='provinces'>
+  <scroll-view scroll-y="{{scroll_y_provinces}}" class='provinces' style='overflow: {{provinces_overflow}}'>
     <view wx:for="{{provinceslist}}" class='provinces_text' bindtap="select_provinces">{{item}}</view>
-  </view>
+  </scroll-view>
+
   <view class="shade {{isShade ? '' : 'shadehide'}}" bindtap="shadehide"></view>
 
-  <scroll-view scroll-y class="citylist {{iscitylistShow ? '' : 'citylisthide'}} {{iscitylistrestrain ? 'citylistscroll_restrain' : ''}}">
+  <scroll-view scroll-y class="citylist {{iscitylistShow ? '' : 'citylisthide'}}" scroll-top="{{scrollTop}}">
     <view wx:for="{{citylist}}" class='city_text'  bindtap="select_city" data-text="{{item}}">{{item}}</view>
   </scroll-view>
 

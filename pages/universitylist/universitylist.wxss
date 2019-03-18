@@ -8,8 +8,10 @@
   z-index: 1;
   top: 0px;
   left: 0px;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #FFFFFF;
+  overflow: auto;
 }
 .provinces_text {
   font-family: PingFangSC-Regular;
@@ -52,9 +54,9 @@
   z-index: 3;
   top: 0px;
   left: 65px;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   background-color: #FFFFFF;
 }
 
@@ -77,9 +79,6 @@
 }
 .citylisthide {
   display: none;
-}
-.citylistscroll_restrain {
-  /* width: 88px !important; */
 }
 .universitylisthide {
   display: none;
@@ -111,9 +110,9 @@
   z-index: 3;
   top: 0px;
   left: 153px;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
   background-color: #EEF5F3;
 }
 

@@ -1,8 +1,8 @@
 <!--pages/citylist/citylist.wxml-->
 <view class='container'>
-  <view class='provinces'>
+  <scroll-view scroll-y="{{scroll_y}}" class='provinces' style='overflow: {{overflow}}'>
     <view wx:for="{{provinceslist}}" class='provinces_text' bindtap="select_provinces">{{item}}</view>
-  </view>
+  </scroll-view>
 
   <view class="shade {{isShade ? '' : 'shadehide'}}" bindtap="shadehide"></view>
 

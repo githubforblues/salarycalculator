@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/universitylist/universitylist",
+    "pages/home/home",
     "pages/citylist/citylist",
     "pages/result/result",
-    "pages/home/home",
-    "pages/universitylist/universitylist",
     "pages/industrylist/industrylist"
   ],
   "window": {

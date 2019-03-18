@@ -16,7 +16,10 @@ Page({
     isShade: false,
     iscitylistShow: false,
     isuniversitylistShow: false,
-    iscitylistrestrain: false,
+    iscitylistrestrain: false, 
+    scroll_y_provinces: true,
+    provinces_overflow: "auto",
+    scrollTop: 0,
   },
 
   /**
@@ -84,6 +87,8 @@ Page({
       isShade: true,
       iscitylistShow: true,
       select_provinces_id: id,
+      provinces_overflow: "hidden",
+      scroll_y_provinces: false,
     })
   },
 
@@ -126,6 +131,9 @@ Page({
       iscitylistrestrain: false,
       select_provinces_id: -1,
       select_university_id: -1,
+      provinces_overflow: "auto",
+      scroll_y_provinces: true,
+      scrollTop: 0,
     })
   },
 

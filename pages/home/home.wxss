@@ -25,10 +25,12 @@ swiper {
   transition: all 0.2s ease-in 0s;
 }
 
-.plan {
-  width: 100%;
-  height: 50px;
-  background-color: #F3F3F3;
+
+.row {
+  display: flex;
+  flex-direction: row;
+
+  position: relative;
 
   margin-bottom-color: #fff;
   margin-bottom: 6px;
@@ -38,14 +40,28 @@ swiper {
   border-bottom-color: #c7c7c7;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  padding-top: 7px;
-  padding-bottom: 6px;
+  margin-top: 7px;
+  margin-bottom: 6px;
+
+  height: 65px;
+  justify-content:flex-end;     /* 删除按钮向右对齐 */
+}
+
+.plan {
+  width: 100%;
+  height: 65px;
+  background-color: #F3F3F3;
 
   display: flex;
   flex-direction: row;
 
   align-items: center;
   justify-content: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
 }
 .plantext {
   font-family: PingFangSC-Medium;
@@ -54,6 +70,9 @@ swiper {
   letter-spacing: 0;
   margin-bottom: 3px;
 }
+
+
+
 .city_industry {
   /* margin-left: 15px; */
 }
@@ -119,3 +138,23 @@ swiper {
   margin-left: 3px;
   margin-top: 1px;
 }
+
+
+.row_delete {
+  /* position: relative; */
+  z-index: 10;
+  /* right: 0; */
+  float: right;
+  width: 63px;
+  height: 65px;
+  background-color: #61A189;
+}
+
+.trash {
+  width: 25px;
+  height: 28px;
+  margin-left: 20px;
+  margin-top: 18px;
+}
+
+
