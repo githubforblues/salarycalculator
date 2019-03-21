@@ -1,4 +1,6 @@
 // pages/industrylist/industrylist.js
+var Api = require('../../api/apis.js');
+
 Page({
 
   /**
@@ -6,16 +8,34 @@ Page({
    */
   data: {
     // 列表应该需要提供id和string两个值
-    industrylist: ['高科技/IT', '金融/Finance', '制造/Manufaturing','服务/Service'],
+    industrylist: [],
+    // 选中的ID，返回给上一页
     industry: -1,
+    // 选中的字符串，返回给上一页
     industry_string: '',
+    kind: 'PUB',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    Api.getIndustriesList({
+      'kind': this.data.kind
+    }, function (res) {
+      console.log('res.data', res.data)
+      that.setData({
+        industrylist: res.data
+      })
+    }, function (res) {
+      if (res.statusCode == 404) {
+        wx.showToast({
+          title: '暂无内容',
+          icon: 'none'
+        })
+      }
+    })
   },
 
   /**
@@ -71,9 +91,6 @@ Page({
   // 点击事件处理
 
   select_industry: function (e) {
-    // 参数暂时写死
-    var id = 1
-    // 参数暂时写死
     var string = e.currentTarget.dataset.text
     string = string.split("/")[0]
 
@@ -82,10 +99,18 @@ Page({
     var prevPage = pages[pages.length - 2];   //上一个页面
 
     //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
-    prevPage.setData({
-      input_industry: id,
-      input_industry_string: string,
-    })
+    if (prevPage.data.input_industry_string == '') {
+      prevPage.setData({
+        input_count: prevPage.data.input_count + 2,
+        input_industry_string: string,
+      })
+      prevPage.cost_forecast()
+    } else {
+      prevPage.setData({
+        input_industry_string: string,
+      })
+      prevPage.cost_forecast()
+    }
 
     wx.navigateBack();   //返回上一个页面
   }

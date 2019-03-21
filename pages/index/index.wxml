@@ -10,12 +10,12 @@
         </view>
         <view class='ssrefernumber'>
           <view class='ss_yuan_char'>¥</view>
-          <view class='ss_number'>6803</view>
+          <view class='ss_number'>{{salaryref}}</view>
           <view class='ss_yuan'>元</view>
         </view>
         <view class='ssreferrange'>
           <view class='ss_yuan_char_small'>¥</view>
-          <view class='ss_number_range'>5500 ～ 7200 元</view>
+          <view class='ss_number_range'>{{output_salaryref_range}}</view>
         </view>
       </view>
 
@@ -26,21 +26,21 @@
         </view>
         <view class='ssrefernumber'>
           <view class='ss_yuan_char'>¥</view>
-          <view class='ss_number'>-200</view>
+          <view class='ss_number'>{{surplusref}}</view>
           <view class='ss_yuan'>元</view>
         </view>
         <view class='ssreferrange'>
           <view class='ss_yuan_char_small'>¥</view>
-          <view class='ss_number_range'>-2500 ～ 200 元</view>
+          <view class='ss_number_range'>{{output_surplusref_range}}</view>
         </view>
       </view>
 
     </view>
 
     <view class='tax_reference'>
-      <view class='reference'>个税: 0</view>
-      <view class='reference'>社保: 0</view>
-      <view class='reference'>公积金: 0</view>
+      <view class='reference'>个税: {{personalTax}}</view>
+      <view class='reference'>社保: {{personalShebao}}</view>
+      <view class='reference'>公积金: {{personalGjj}}</view>
       <view></view>
     </view>
 
@@ -76,7 +76,7 @@
       <view class='userinfo_input12 userinfo_input_margin'>
         <view class='userinfo_input_view'>
           <view class='uititle'>
-            <image src='../../images/home@3x.png' class='ui_home_img'></image>
+            <image src='../../images/university@3x.png' class='ui_university_img'></image>
             <view class='ui_title_text'>毕业院校</view>
           </view>
           <view class='choice'>
@@ -139,27 +139,27 @@
     <view class='wuxianyijin_reference'>
       <view class='wxyj_row'>
         <view class='wxyj_name'>医疗保险</view>
-        <view class='wxyj_number'>140 ～ 320</view>
+        <view class='wxyj_number'>{{personalYanglaoBeg}} ~ {{personalYanglaoEnd}}</view>
       </view>
       <view class='wxyj_row'>
         <view class='wxyj_name'>养老保险</view>
-        <view class='wxyj_number'>140 ～ 320</view>
+        <view class='wxyj_number'>{{personalYiliaoBeg}} ~ {{personalYiliaoEnd}}</view>
       </view>
       <view class='wxyj_row'>
         <view class='wxyj_name'>失业保险</view>
-        <view class='wxyj_number'>140 ～ 320</view>
+        <view class='wxyj_number'>{{personalShiyeBeg}} ~ {{personalShiyeEnd}}</view>
       </view>
-      <view class='wxyj_row'>
+      <!-- <view class='wxyj_row'>
         <view class='wxyj_name'>工伤保险</view>
         <view class='wxyj_number'>140 ～ 320</view>
       </view>
       <view class='wxyj_row'>
         <view class='wxyj_name'>生育保险</view>
         <view class='wxyj_number'>140 ～ 320</view>
-      </view>
+      </view> -->
       <view class='wxyj_row_last'>
-        <view class='wxyj_name'>公积金比例</view>
-        <view class='wxyj_number_last'>12%</view>
+        <view class='wxyj_name'>公积金</view>
+        <view class='wxyj_number_last'>{{personalGjjBeg}} ~ {{personalGjjEnd}}</view>
       </view>
     </view>
   </view>

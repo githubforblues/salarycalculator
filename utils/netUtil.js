@@ -1,6 +1,5 @@
 //网络请求封装类
-const BASEURL = 'https://127.0.0.1:8080';
-const VCODE_BASEURL = 'https://127.0.0.1:8080';
+const BASEURL = 'https://zhisou.test.yingliwang.com:18181';
 
 //----------------- get请求 ----------------------
 function getApi(apiUrl, params, success, fail) {

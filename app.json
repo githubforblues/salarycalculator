@@ -5,7 +5,8 @@
     "pages/home/home",
     "pages/citylist/citylist",
     "pages/result/result",
-    "pages/industrylist/industrylist"
+    "pages/industrylist/industrylist",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,20 +20,20 @@
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "images/cal_selected@3x.png",
-        "iconPath": "images/cal_empty@3x.png",
+        "selectedIconPath": "images/cal_hl@3x.png",
+        "iconPath": "images/cal@3x.png",
         "pagePath": "pages/index/index",
         "text": "薪资预测"
       },
       {
-        "selectedIconPath": "images/test_selected@3x.png",
-        "iconPath": "images/test_empty@3x.png",
-        "pagePath": "pages/index/index",
+        "selectedIconPath": "images/test_hl@3x.png",
+        "iconPath": "images/test@3x.png",
+        "pagePath": "pages/test/test",
         "text": "职力测试"
       },
       {
-        "selectedIconPath": "images/mine_selected@3x.png",
-        "iconPath": "images/mine_empty@3x.png",
+        "selectedIconPath": "images/mine_hl@3x.png",
+        "iconPath": "images/mine@3x.png",
         "pagePath": "pages/home/home",
         "text": "我的"
       }

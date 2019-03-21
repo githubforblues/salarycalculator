@@ -186,6 +186,13 @@
   margin-left: 3px;
   margin-top: 2px;
 }
+.userinfo_input_view .ui_university_img {
+  width: 14px;
+  height: 14px;
+  margin-right: 7px;
+  margin-left: 3px;
+  margin-top: 1px;
+}
 .userinfo_input_view .ui_title_text {
   font-family: PingFangSC-Medium;
   font-size: 12px;
@@ -261,12 +268,12 @@
 }
 .userinfo_input_view .ui_choice_text_university {
   font-family: PingFangSC-Medium;
-  font-size: 23px;
+  font-size: 20px;
   color: #7A7A7A;
   letter-spacing: 0;
   margin-top: 5px;
   text-align: center;
-  width: 110px;
+  width: 130px;
 }
 .userinfo_input_view .ui_choice_text_university_longstring {
   font-family: PingFangSC-Medium;
@@ -406,7 +413,7 @@
   letter-spacing: 0;
   text-align: right;
   float: right;
-  width: 235px;
+  width: 265px;
 }
 
 
