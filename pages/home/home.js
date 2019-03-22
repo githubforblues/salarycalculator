@@ -19,128 +19,14 @@ Page({
     rightMargin: '60rpx',
     currentIndex: 0,
 
-    list: [
-      {
-        city: '上海市',
-        industry: '高科技/IT',
-        university: '中国科技大学',
-        recode: '本科',
-        homecost: 800,
-        othercost: 1000,
-        salaryref: 6803,
-        salaryrefrang: '1000~2000',
-        surplusref: -200,
-        surplusrefrang: '-1000~2000',
-        txtStyle:'',
-      },
-      {
-        city: '上海市',
-        industry: '高科技/IT',
-        university: '中国科技大学',
-        recode: '本科',
-        homecost: 800,
-        othercost: 1000,
-        salaryref: 6803,
-        salaryrefrang: '1000~2000',
-        surplusref: -200,
-        surplusrefrang: '-1000~2000',
-        txtStyle: '',
-      },
-      {
-        city: '上海市',
-        industry: '高科技/IT',
-        university: '中国科技大学',
-        recode: '本科',
-        homecost: 800,
-        othercost: 1000,
-        salaryref: 6803,
-        salaryrefrang: '1000~2000',
-        surplusref: -200,
-        surplusrefrang: '-1000~2000',
-        txtStyle: '',
-      },
-      {
-        city: '上海市',
-        industry: '高科技/IT',
-        university: '中国科技大学',
-        recode: '本科',
-        homecost: 800,
-        othercost: 1000,
-        salaryref: 6803,
-        salaryrefrang: '1000~2000',
-        surplusref: -200,
-        surplusrefrang: '-1000~2000',
-        txtStyle: '',
-      },
-      {
-        city: '上海市',
-        industry: '高科技/IT',
-        university: '中国科技大学',
-        recode: '本科',
-        homecost: 800,
-        othercost: 1000,
-        salaryref: 6803,
-        salaryrefrang: '1000~2000',
-        surplusref: -200,
-        surplusrefrang: '-1000~2000',
-        txtStyle: '',
-      },
-      {
-        city: '上海市',
-        industry: '高科技/IT',
-        university: '中国科技大学',
-        recode: '本科',
-        homecost: 800,
-        othercost: 1000,
-        salaryref: 6803,
-        salaryrefrang: '1000~2000',
-        surplusref: -200,
-        surplusrefrang: '-1000~2000',
-        txtStyle: '',
-      },
-      {
-        city: '上海市',
-        industry: '高科技/IT',
-        university: '中国科技大学',
-        recode: '本科',
-        homecost: 800,
-        othercost: 1000,
-        salaryref: 6803,
-        salaryrefrang: '1000~2000',
-        surplusref: -200,
-        surplusrefrang: '-1000~2000',
-        txtStyle: '',
-      },
-      {
-        city: '上海市',
-        industry: '高科技/IT',
-        university: '中国科技大学',
-        recode: '本科',
-        homecost: 800,
-        othercost: 1000,
-        salaryref: 6803,
-        salaryrefrang: '1000~2000',
-        surplusref: -200,
-        surplusrefrang: '-1000~2000',
-        txtStyle: '',
-      },
-      {
-        city: '上海市',
-        industry: '高科技/IT',
-        university: '中国科技大学',
-        recode: '本科',
-        homecost: 800,
-        othercost: 1000,
-        salaryref: 6803,
-        salaryrefrang: '1000~2000',
-        surplusref: -200,
-        surplusrefrang: '-1000~2000',
-        txtStyle: '',
-      }
-    ],
+    list: [],
 
     delBtnWidth: 63,
     startX: "",
+    readydeleterowid: "",
+
+    levellist: ['乞丐', '穷人', '小康', '中产', '富豪'],
+    levelnum: 0,
   },
 
   handleChange: function (e) {
@@ -153,7 +39,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    Api.getResultList({
+      'offset': 0,
+      'length': 100
+    }, function (res) {
+      var tmplist = res.data
+      for (var i=0; i<tmplist.length; i++){
+        tmplist[i]['txtStyle'] = ''
+      }
+      that.setData({
+        list: tmplist,
+      })
+    }, function (res) {
+      if (res.statusCode == 404) {
+        wx.showToast({
+          title: '暂无内容',
+          icon: 'none'
+        })
+      }
+    })
   },
 
   /**
@@ -208,6 +113,10 @@ Page({
 
 
   touchS: function (e) {
+    if (this.data.readydeleterowid != '' && this.data.readydeleterowid != e.currentTarget.dataset.index) {
+      this.cancelotherdeletestatus()
+    }
+    
     if (e.touches.length == 1) {
       this.setData({
         //设置触摸起始点水平方向位置
@@ -236,7 +145,12 @@ Page({
       //获取手指触摸的是哪一项
       var index = e.currentTarget.dataset.index;
       var list = this.data.list;
-      list[index].txtStyle = txtStyle;
+      for(var i=0; i<list.length; i++) {
+        if (list[i].id == index) {
+          list[i].txtStyle = txtStyle;
+        }
+      }      
+      
       //更新列表的状态
       this.setData({
         list: list
@@ -256,12 +170,31 @@ Page({
       //获取手指触摸的是哪一项
       var index = e.currentTarget.dataset.index;
       var list = this.data.list;
-      list[index].txtStyle = txtStyle;
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id == index) {
+          list[i].txtStyle = txtStyle;
+        }
+      }
       //更新列表的状态
       this.setData({
-        list: list
+        list: list,
+        readydeleterowid: index,
       });
     }
+  },
+
+  //点击其他行取消之前的左滑删除状态
+  cancelotherdeletestatus: function() {
+    var list = this.data.list;
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].id == this.data.readydeleterowid) {
+        list[i].txtStyle = 0;
+      }
+    }
+    //更新列表的状态
+    this.setData({
+      list: list,
+    });
   },
 
   //获取元素自适应后的实际宽度
@@ -290,12 +223,74 @@ Page({
   delItem: function (e) {
     //获取列表中要删除项的下标
     var index = e.currentTarget.dataset.index;
-    var list = this.data.list;
-    //移除列表中下标为index的项
-    list.splice(index, 1);
-    //更新列表的状态
-    this.setData({
-      list: list
-    });
+
+    var list = this.data.list
+    var that = this
+    Api.deleteResultRow({}, index, function (res) {
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id == index) {
+          console.log(i)
+          list.splice(i, 1);
+          that.setData({
+            list: list
+          });
+        }
+      }  
+    }, function (res) {
+      if (res.statusCode == 404) {
+        wx.showToast({
+          title: '暂无内容',
+          icon: 'none'
+        })
+      }
+    })
   },
+
+  //点击跳转评估结果页
+  rowdetail: function(e) {
+    var that = this
+    var txtStyle = e.currentTarget.dataset.style;
+    var id = e.currentTarget.dataset.index;
+    if (txtStyle == "" || txtStyle == "left:0px") {
+      Api.getRowDetail({}, id, function (res) {
+        for (var i = 0; i < that.data.levellist.length; i++) {
+          if (res.data.content.result.assessLevel == that.data.levellist[i]) {
+            that.setData({
+              levelnum: i + 1
+            })
+          }
+        }
+
+        that.setData({
+          salaryref: res.data.content.result.mouthPay,
+          mouthPayBeg: res.data.content.result.mouthPayBeg,
+          mouthPayEnd: res.data.content.result.mouthPayEnd,
+          surplusref: res.data.content.result.balance,
+          balanceBeg: res.data.content.result.balanceBeg,
+          balanceEnd: res.data.content.result.balanceEnd,
+          rankOfAll: (res.data.content.result.rankOfAll * 100).toFixed(0),
+          rankOfCity: (res.data.content.result.rankOfCity * 100).toFixed(0),
+          assessLevel: res.data.content.result.assessLevel,
+          input_city_string: res.data.content.form.city,
+        })
+
+        that.redirect_to_detail()
+      }, function (res) {
+        if (res.statusCode == 404) {
+          wx.showToast({
+            title: '暂无内容',
+            icon: 'none'
+          })
+        }
+      })
+    }
+  },
+
+  //跳转评估结果页
+  redirect_to_detail: function() {
+    wx.navigateTo({ url: "/pages/result/result" })
+  },
+
 })
+
+

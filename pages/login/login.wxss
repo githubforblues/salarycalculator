@@ -1,0 +1,27 @@
+/* pages/login/login.wxss */
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.image-login-logo {
+  width: 250rpx;
+  height: 250rpx;
+  margin-top: 300rpx;
+}
+
+.btn-login {
+  width: 300rpx;
+  height: 80rpx;
+  background: #388ceb;
+  border-radius: 8rpx;
+  margin-top: 150rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #fff;
+  letter-spacing: 0;
+}

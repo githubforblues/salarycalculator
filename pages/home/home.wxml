@@ -10,43 +10,41 @@
     </block>
   </swiper>
 
-  <!-- <view class='background_separated'></view> -->
-
-  <view class='row' wx:for="{{list}}" wx:key="{{index}}">
-    <view class='plan' data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{item.txtStyle}}">
+  <view class='row' wx:for="{{list}}">
+    <view class='plan' data-index="{{item.id}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" bindtap="rowdetail" style="{{item.txtStyle}}" data-style="{{item.txtStyle}}">
       <view class='city_industry'>
-        <view class='city_industry_text'>{{item.city}}/{{item.industry}}</view>
-        <view class='plantext'>{{item.university}}/{{item.recode}}</view>
-        <view class='plantext'>住房{{item.homecost}}/其他{{item.othercost}}</view>
+        <view class='city_industry_text'>{{item.content.form.city}}/{{item.content.form.industry}}</view>
+        <view class='plantext'>{{item.content.form.campus}}/{{item.content.form.diploma}}</view>
+        <view class='plantext'>住房{{item.content.form.houseRent}}/其他{{item.content.form.otherExpense}}</view>
       </view>
       <view class='salaryref'>
         <view class='reftext'>你的月薪参考</view>
         <view class='salaryref_number'>
           <view class='yuan'>¥</view>
-          <view class='refnumber'>{{item.salaryref}}</view>
+          <view class='refnumber'>{{item.content.result.mouthPay}}</view>
           <view class='refyuan'>元</view>
         </view>
         <view class='ref_range'>
           <view class='plantext range_yuan'>¥</view>
-          <view class='rangetext'>{{item.salaryrefrang}} 元</view>
+          <view class='rangetext'>{{item.content.result.mouthPayBeg}} ~ {{item.content.result.mouthPayEnd}} 元</view>
         </view>
       </view>
       <view class='surplusref'>
         <view class='reftext'>月结余参考</view>
         <view class='salaryref_number'>
           <view class='yuan'>¥</view>
-          <view class='refnumber'>{{item.salaryref}}</view>
+          <view class='refnumber'>{{item.content.result.balance}}</view>
           <view class='refyuan'>元</view>
         </view>
         <view class='ref_range'>
           <view class='plantext range_yuan'>¥</view>
-          <view class='rangetext'>{{item.surplusrefrang}} 元</view>
+          <view class='rangetext'>{{item.content.result.balanceBeg}} ~ {{item.content.result.balanceEnd}} 元</view>
         </view>
       </view>
 
     </view>
 
-    <view bindtap="delItem" class='row_delete'>
+    <view bindtap="delItem" class='row_delete' data-index="{{item.id}}">
       <image src='../../images/trash@3x.png' class='trash'></image>
     </view>
   </view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/universitylist/universitylist",
     "pages/home/home",
@@ -26,12 +27,6 @@
         "text": "薪资预测"
       },
       {
-        "selectedIconPath": "images/test_hl@3x.png",
-        "iconPath": "images/test@3x.png",
-        "pagePath": "pages/test/test",
-        "text": "职力测试"
-      },
-      {
         "selectedIconPath": "images/mine_hl@3x.png",
         "iconPath": "images/mine@3x.png",
         "pagePath": "pages/home/home",
@@ -40,3 +35,4 @@
     ]
   }
 }
+

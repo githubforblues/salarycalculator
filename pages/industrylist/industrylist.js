@@ -24,7 +24,6 @@ Page({
     Api.getIndustriesList({
       'kind': this.data.kind
     }, function (res) {
-      console.log('res.data', res.data)
       that.setData({
         industrylist: res.data
       })
@@ -91,8 +90,8 @@ Page({
   // 点击事件处理
 
   select_industry: function (e) {
-    var string = e.currentTarget.dataset.text
-    string = string.split("/")[0]
+    var longstring = e.currentTarget.dataset.text
+    var string = longstring.split("/")[0]
 
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];   //当前页面
@@ -103,11 +102,13 @@ Page({
       prevPage.setData({
         input_count: prevPage.data.input_count + 2,
         input_industry_string: string,
+        input_industry_longstring: longstring,
       })
       prevPage.cost_forecast()
     } else {
       prevPage.setData({
         input_industry_string: string,
+        input_industry_longstring: longstring,
       })
       prevPage.cost_forecast()
     }

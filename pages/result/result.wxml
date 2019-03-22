@@ -7,25 +7,25 @@
     </view>
     <view class='salarynum extra_margin_left'>
       <view class='yuan_big'>¥</view>
-      <view class='salary_number'>6083</view>
+      <view class='salary_number'>{{salaryref}}</view>
       <view class='salary_yuan'>元</view>
     </view>
   </view>
   <view class='salary_range'>
     <view class='yuan_m'>¥</view>
-    <view class='salary_range_text'>5500 ～ 7200 元</view>
+    <view class='salary_range_text'>{{mouthPayBeg}} ～ {{mouthPayEnd}} 元</view>
   </view>
 
   <view class='beat'>
     <view class='beatround'>
       <view class='beatround_text'>你击败了</view>
-      <view class='beatround_number'>12%</view>
+      <view class='beatround_number'>{{rankOfAll}}%</view>
       <view class='beatround_name'>全国应届毕业生</view>
     </view>
     <view class='beatround'>
       <view class='beatround_text'>你击败了</view>
-      <view class='beatround_number'>24%</view>
-      <view class='beatround_name'>上海市应届毕业生</view>
+      <view class='beatround_number'>{{rankOfCity}}%</view>
+      <view class='beatround_name'>{{city}}市应届毕业生</view>
     </view>
   </view>
   
@@ -39,43 +39,43 @@
         </view>
         <view class='surplusnum extra_margin_left'>
           <view class='yuan_big_gary'>¥</view>
-          <view class='surplus_number'>-230.23</view>
+          <view class='surplus_number'>{{surplusref}}</view>
           <view class='surplus_yuan'>元</view>
         </view>
       </view>
 
       <view class='surplus_range'>
         <view class='surplus_yuan_big'>¥</view>
-        <view class='surplus_range_text'>-2040.23 ～ 1244.32 元</view>
+        <view class='surplus_range_text'>{{balanceBeg}} ～ {{balanceEnd}} 元</view>
       </view>
 
       <view class='return_text'>根据你的月结余你被评为</view>
 
     </view>
 
-    <view class='return_img'>啦啦啦</view>
+    <image src='../../avatar/level{{levelnum}}.png' class='return_img'></image>
 
   </view>
   <view class='levellist'>
     <view class='level'>
-      <view class='level_name'>乞丐级</view>
-      <image src='../../images/level1_qigai_hl@3x.png' class='level_img level1_img'></image>
+      <view class="level_name {{assessLevel == '乞丐' ? 'level_selected' : ''}}">乞丐级</view>
+      <image src='../../images/level1_qigai_hl@3x.png' class="level_img level1_img {{assessLevel == '乞丐' ? 'level_selected' : ''}}"></image>
     </view>
     <view class='level'>
-      <view class='level_name'>穷人级</view>
-      <image src='../../images/level2_qiongren_hl@3x.png' class='level_img'></image>
+      <view class="level_name {{assessLevel == '穷人' ? 'level_selected' : ''}}">穷人级</view>
+      <image src='../../images/level2_qiongren_hl@3x.png' class="level_img {{assessLevel == '穷人' ? 'level_selected' : ''}}"></image>
     </view>
     <view class='level'>
-      <view class='level_name'>小康级</view>
-      <image src='../../images/level3_xiaokang_hl@3x.png' class='level_img'></image>
+      <view class="level_name {{assessLevel == '小康' ? 'level_selected' : ''}}">小康级</view>
+      <image src='../../images/level3_xiaokang_hl@3x.png' class="level_img {{assessLevel == '小康' ? 'level_selected' : ''}}"></image>
     </view>
     <view class='level'>
-      <view class='level_name'>中产级</view>
-      <image src='../../images/level4_zhongchan_hl@3x.png' class='level_img'></image>
+      <view class="level_name {{assessLevel == '中产' ? 'level_selected' : ''}}">中产级</view>
+      <image src='../../images/level4_zhongchan_hl@3x.png' class="level_img {{assessLevel == '中产' ? 'level_selected' : ''}}"></image>
     </view>
     <view class='level'>
-      <view class='level_name'>富豪级</view>
-      <image src='../../images/level5_fuhao_hl@3x.png' class='level_img level5_img'></image>
+      <view class="level_name {{assessLevel == '富豪' ? 'level_selected' : ''}}">富豪级</view>
+      <image src='../../images/level5_fuhao_hl@3x.png' class="level_img level5_img {{assessLevel == '中产' ? 'level_selected' : ''}}"></image>
     </view>
   </view>
 

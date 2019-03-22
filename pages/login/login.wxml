@@ -1,0 +1,5 @@
+<!--pages/login/login.wxml-->
+<view class='vertical-center'>
+  <image class='image-login-logo' src='/avatar/ic_user_avatar_default.png'></image>
+  <button class="btn-login" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo='login'>微信登录</button>
+</view>

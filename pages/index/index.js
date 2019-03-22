@@ -12,6 +12,7 @@ Page({
     input_city_code: '',
     input_city_string: '',
     input_industry_string: '',
+    input_industry_longstring: '',
     input_record: -1,
     input_record_string: '',
     input_university_code: '',
@@ -21,10 +22,16 @@ Page({
     input_othercost: '',
 
     salaryref: 0,
+    mouthPayBeg: 0,
+    mouthPayEnd: 0,
     surplusref: 0,
+    balanceBeg: 0,
+    balanceEnd: 0,
     output_salaryref_range: '0 ~ 0 元',
     output_surplusref_range: '0 ~ 0 元',
     personalTax: 0,
+    personalTaxBeg: 0,
+    personalTaxEnd: 0,
     personalShebao: 0,
     personalGjj: 0,
     personalYanglaoBeg: 0,
@@ -35,6 +42,11 @@ Page({
     personalGjjEnd: 0,
     personalShiyeBeg: 0,
     personalShiyeEnd: 0,
+    personalExgjjBeg: 0,
+    personalExgjjEnd: 0,
+    rankOfAll: 0,
+    rankOfCity: 0,
+    assessLevel: '',
 
     isHide: true,
     isSelectLock: false,
@@ -150,9 +162,10 @@ Page({
   },
   // 点击跳转到方案分析页
   analysis: function () {
-    this.datasave()
-    wx.navigateTo({ url: "/pages/result/result" })
-    this.reset()      // 这个操作放到接口返回请求之后回调，体验更佳
+    if (this.data.input_count == 15) {
+      this.datasave()
+      wx.navigateTo({ url: "/pages/result/result" })
+    }
   },
 
   // 输入数字时防止点击到其他选择项
@@ -191,6 +204,8 @@ Page({
   // 重置表单
   reset: function () {
     this.setData({
+      input_count: 0,
+
       input_city: -1,
       input_city_string: '',
       input_industry: -1,
@@ -260,21 +275,26 @@ Page({
       }
 
       var that = this
-      console.log(this.data.input_homecost)
       Api.postAnalysis({
         "campus": this.data.input_university_string,
         "city": this.data.input_city_string,
         "diploma": this.data.input_record_string,
-        "industry": this.data.input_industry_string,
+        "industry": this.data.input_industry_longstring,
         "houseRent": this.data.input_homecost,
         "otherExpense": this.data.input_othercost,
       }, function (res) {
         that.setData({
           salaryref: res.data.mouthPay,
+          mouthPayBeg: res.data.mouthPayBeg,
+          mouthPayEnd: res.data.mouthPayEnd,
           surplusref: res.data.balance,
+          balanceBeg: res.data.balanceBeg,
+          balanceEnd: res.data.balanceEnd,
           output_salaryref_range: res.data.mouthPayBeg + ' ~ ' + res.data.mouthPayEnd + ' 元',
           output_surplusref_range: res.data.balanceBeg + ' ~ ' + res.data.balanceEnd + ' 元',
           personalTax: res.data.personalTax,
+          personalTaxBeg: res.data.personalTaxBeg,
+          personalTaxEnd: res.data.personalTaxEnd,
           personalShebao: res.data.personalShebao,
           personalGjj: res.data.personalGjj,
           personalYanglaoBeg: res.data.personalYanglaoBeg,
@@ -285,6 +305,11 @@ Page({
           personalGjjEnd: res.data.personalGjjEnd,
           personalShiyeBeg: res.data.personalShiyeBeg,
           personalShiyeEnd: res.data.personalShiyeEnd,
+          personalExgjjBeg: res.data.personalExgjjBeg,
+          personalExgjjEnd: res.data.personalExgjjEnd,
+          rankOfAll: res.data.rankOfAll,
+          rankOfCity: res.data.rankOfCity,
+          assessLevel: res.data.assessLevel,
         })
       }, function (res) {
         if (res.statusCode == 404) {
@@ -299,6 +324,7 @@ Page({
 
   // 保存填写内容和结果
   datasave: function () {
+    var that = this
     Api.postDataSave({
       "form": {
         "campus": this.data.input_university_string,
@@ -309,14 +335,14 @@ Page({
         "otherExpense": this.data.input_othercost,
       },
       "result": {
-        "salaryref": this.data.salaryref,
-        "mouthPayBeg": 5214,			// 月薪范围开始
-        "mouthPayEnd": 7225,			// 月薪范围结束
-        "surplusref": this.data.surplusref,
-        "balanceBeg": -5786,			// 支出范围开始
-        "balanceEnd": -3775,			// 支出范围结束
-        "personalExgjjBeg": 0,			// 额为公积金范围开始
-        "personalExgjjEnd": 0,			// 额外公积金范围结束
+        "mouthPay": this.data.salaryref,
+        "mouthPayBeg": this.data.mouthPayBeg,
+        "mouthPayEnd": this.data.mouthPayEnd,
+        "balance": this.data.surplusref,
+        "balanceBeg": this.data.balanceBeg,
+        "balanceEnd": this.data.balanceEnd,
+        "personalExgjjBeg": this.data.personalExgjjBeg,
+        "personalExgjjEnd": this.data.personalExgjjEnd,
         "personalGjj": this.data.personalYiliaoBeg,
         "personalGjjBeg": this.data.personalYiliaoBeg,
         "personalGjjEnd": this.data.personalYiliaoBeg,
@@ -327,28 +353,12 @@ Page({
         "personalYiliaoBeg": this.data.personalYiliaoBeg,
         "personalYiliaoEnd": this.data.personalYiliaoBeg,
         "personalTax": this.data.personalTax,
-        "personalTaxBeg": 6,			// 个税
-        "personalTaxEnd": 68,			// 个税
+        "personalTaxBeg": this.data.personalTaxBeg,
+        "personalTaxEnd": this.data.personalTaxEnd,
         "personalShebao": this.data.personalShebao,
-        "rankOfAll": 0.1572,			// 全国排名，double , 15%
-        "rankOfCity": 0.02202697,		// 城市排名，double , 2%
-        "assessLevel": "乞丐"				// 等级 | 乞丐  穷人 小康 中产 富豪 
-
-        salaryref: res.data.mouthPay,
-        surplusref: res.data.balance,
-        output_salaryref_range: res.data.mouthPayBeg + ' ~ ' + res.data.mouthPayEnd + ' 元',
-        output_surplusref_range: res.data.balanceBeg + ' ~ ' + res.data.balanceEnd + ' 元',
-        personalTax: res.data.personalTax,
-        // personalShebao: res.data.personalShebao,
-        // personalGjj: res.data.personalGjj,
-        // personalYanglaoBeg: res.data.personalYanglaoBeg,
-        // personalYanglaoEnd: res.data.personalYanglaoEnd,
-        // personalYiliaoBeg: res.data.personalYiliaoBeg,
-        // personalYiliaoEnd: res.data.personalYiliaoEnd,
-        // personalGjjBeg: res.data.personalGjjBeg,
-        // personalGjjEnd: res.data.personalGjjEnd,
-        // personalShiyeBeg: res.data.personalShiyeBeg,
-        // personalShiyeEnd: res.data.personalShiyeEnd,
+        "rankOfAll": this.data.rankOfAll,
+        "rankOfCity": this.data.rankOfCity,
+        "assessLevel": this.data.assessLevel,
       }
     }, function (res) {
       that.setData({
