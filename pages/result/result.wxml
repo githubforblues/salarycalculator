@@ -84,5 +84,5 @@
   <button class='order'>预约个人版</button>
 
   <view class='private_version_info'>个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于个人版将于</view>
-  <view style='width:100%; height:50px; background-color: #61a189'></view>
+  <view style='width:100%; height:200px; background-color: #61a189'></view>
 </view>

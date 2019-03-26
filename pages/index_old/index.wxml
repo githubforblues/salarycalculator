@@ -1,16 +1,53 @@
 <!--pages/index/index.wxml-->
-<view style='overflow: hidden; height: 100%'>
+<view>
   <view class='container'>
+    <view class='salaryandsurplus'>
 
-    <view class='title'>
-      <view class='title_text'>薪知</view>
-      <image class=''></image>
+      <view class='salaryandsurplusview'>
+        <view class='sstitle'>
+          <image src='../../images/salaryref@3x.png' class='ss_salaryref_img'></image>
+          <view class='ss_title_text'>你的月薪参考</view>
+        </view>
+        <view class='ssrefernumber'>
+          <view class='ss_yuan_char'>¥</view>
+          <view class='ss_number'>{{salaryref}}</view>
+          <view class='ss_yuan'>元</view>
+        </view>
+        <view class='ssreferrange'>
+          <view class='ss_yuan_char_small'>¥</view>
+          <view class='ss_number_range'>{{output_salaryref_range}}</view>
+        </view>
+      </view>
+
+      <view class='salaryandsurplusview'>
+        <view class='sstitle'>
+          <image src='../../images/surplusref@3x.png' class='ss_surplusref_img'></image>
+          <view class='ss_title_text'>月结余参考</view>
+        </view>
+        <view class='ssrefernumber'>
+          <view class='ss_yuan_char'>¥</view>
+          <view class='ss_number'>{{surplusref}}</view>
+          <view class='ss_yuan'>元</view>
+        </view>
+        <view class='ssreferrange'>
+          <view class='ss_yuan_char_small'>¥</view>
+          <view class='ss_number_range'>{{output_surplusref_range}}</view>
+        </view>
+      </view>
+
+    </view>
+
+    <view class='tax_reference'>
+      <view class='reference'>个税: {{personalTax}}</view>
+      <view class='reference'>社保: {{personalShebao}}</view>
+      <view class='reference'>公积金: {{personalGjj}}</view>
+      <view></view>
     </view>
 
     <view class='background_separated'></view>
 
     <view class='userinfo_input1'>
-      <view class='userinfo_input11 userinfo_input11_margin'>
+      <view class='userinfo_input11 userinfo_input11_border_margin'>
         <view class='userinfo_input_view'>
           <view class='uititle'>
             <image src='../../images/city@3x.png' class='ui_city_img'></image>
@@ -36,9 +73,6 @@
           </view>
         </view>
       </view>
-
-      <view class='background_separated'></view>
-
       <view class='userinfo_input12 userinfo_input_margin'>
         <view class='userinfo_input_view'>
           <view class='uititle'>
@@ -98,18 +132,53 @@
       </view>
     </view>
 
-    <view class='background_separated'></view>
-
+    <view class='background_separated_wuxianyijin'>
+      <image src='../../images/wuxianyijin@3x.png' class='background_separated_img'></image>
+      <view class='background_separated_wuxianyijin_text'>五险一金缴纳明细参考</view>
+    </view>
+    <view class='wuxianyijin_reference'>
+      <view class='wxyj_row'>
+        <view class='wxyj_name'>医疗保险</view>
+        <view class='wxyj_number'>{{personalYanglaoBeg}} ~ {{personalYanglaoEnd}}</view>
+      </view>
+      <view class='wxyj_row'>
+        <view class='wxyj_name'>养老保险</view>
+        <view class='wxyj_number'>{{personalYiliaoBeg}} ~ {{personalYiliaoEnd}}</view>
+      </view>
+      <view class='wxyj_row'>
+        <view class='wxyj_name'>失业保险</view>
+        <view class='wxyj_number'>{{personalShiyeBeg}} ~ {{personalShiyeEnd}}</view>
+      </view>
+      <!-- <view class='wxyj_row'>
+        <view class='wxyj_name'>工伤保险</view>
+        <view class='wxyj_number'>140 ～ 320</view>
+      </view>
+      <view class='wxyj_row'>
+        <view class='wxyj_name'>生育保险</view>
+        <view class='wxyj_number'>140 ～ 320</view>
+      </view> -->
+      <view class='wxyj_row_last'>
+        <view class='wxyj_name'>公积金</view>
+        <view class='wxyj_number_last'>{{personalGjjBeg}} ~ {{personalGjjEnd}}</view>
+      </view>
+    </view>
   </view>
 
+  <view class='background_separated_bottom'></view>
+
   <view class='buttons_view'>
-    <view class="{{input_count == 15 ? 'analysis_button_ready' : 'analysis_button'}}" bindtap="analysis">方案分析</view>
+    <view class='commit_button' bindtap="reset">重置方案</view>
+    <view class='analysis_button' bindtap="analysis">方案分析</view>
   </view>
 
 
   <!-- 用于最高学历选择 -->
   <view class="shade {{isHide ? 'isHide' : ''}}" bindtap="cancel_selector" catchtouchmove="true"></view>
   <view class="record_select {{isHide ? 'isHide' : ''}}" catchtouchmove="true">
+    <!-- <view class='rs_ok_or_cancel'>
+      <view class='rs_cancel_buttom' bindtap="cancel_selector">取消</view>
+      <view class='rs_ok_buttom'>确定</view>
+    </view> -->
     <view class='rs_choice'>
       <view class="{{input_record == 0 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='0'>专科</view>
       <view class="{{input_record == 1 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='1'>本科</view>
@@ -120,87 +189,4 @@
 
   <!-- 用于数字输入时防止点击其他项 -->
   <view class="selectlockshade {{isSelectLock ? '' : 'selectlock'}}" bindtap="select_unlock" catchtouchmove="true"></view>
-
-  <!-- 结果报表 -->
-  <view>
-    <view class="shade {{isShadeHide ? 'isHide' : ''}}" bindtap="cancel_resultshade" catchtouchmove="true"></view>
-    <view class="result {{isResultHide ? 'isHide' : ''}}" style='top:{{winheight}};' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
-      <view class='short_term' style='left:{{short_term_left}}'></view>
-      <view class='salaryandsurplus'>
-
-        <view class='salaryandsurplusview'>
-          <view class='sstitle'>
-            <image src='../../images/salaryref@3x.png' class='ss_salaryref_img'></image>
-            <view class='ss_title_text'>你的月薪参考</view>
-          </view>
-          <view class='ssrefernumber'>
-            <view class='ss_yuan_char'>¥</view>
-            <view class='ss_number'>{{salaryref}}</view>
-            <view class='ss_yuan'>元</view>
-          </view>
-          <view class='ssreferrange'>
-            <view class='ss_yuan_char_small'>¥</view>
-            <view class='ss_number_range'>{{output_salaryref_range}}</view>
-          </view>
-        </view>
-
-        <view class='salaryandsurplusview'>
-          <view class='sstitle'>
-            <image src='../../images/surplusref@3x.png' class='ss_surplusref_img'></image>
-            <view class='ss_title_text'>月结余参考</view>
-          </view>
-          <view class='ssrefernumber'>
-            <view class='ss_yuan_char'>¥</view>
-            <view class='ss_number'>{{surplusref}}</view>
-            <view class='ss_yuan'>元</view>
-          </view>
-          <view class='ssreferrange'>
-            <view class='ss_yuan_char_small'>¥</view>
-            <view class='ss_number_range'>{{output_surplusref_range}}</view>
-          </view>
-        </view>
-      </view>
-
-      <view class='tax_reference'>
-        <view class='reference'>个税: {{personalTax}}</view>
-        <view class='reference'>社保: {{personalShebao}}</view>
-        <view class='reference'>公积金: {{personalGjj}}</view>
-      </view>
-
-      <view class='background_separated_wuxianyijin'>
-        <image src='../../images/wuxianyijin@3x.png' class='background_separated_img'></image>
-        <view class='background_separated_wuxianyijin_text'>五险一金个人缴纳部分明细参考</view>
-      </view>
-      <view class='wuxianyijin_reference'>
-        <view class='wxyj_row'>
-          <view class='wxyj_name'>医疗保险</view>
-          <view class='wxyj_number'>{{personalYanglaoBeg}} ~ {{personalYanglaoEnd}}</view>
-        </view>
-        <view class='wxyj_row'>
-          <view class='wxyj_name'>养老保险</view>
-          <view class='wxyj_number'>{{personalYiliaoBeg}} ~ {{personalYiliaoEnd}}</view>
-        </view>
-        <view class='wxyj_row'>
-          <view class='wxyj_name'>失业保险</view>
-          <view class='wxyj_number'>{{personalShiyeBeg}} ~ {{personalShiyeEnd}}</view>
-        </view>
-        <view class='wxyj_row'>
-          <view class='wxyj_name'>公积金</view>
-          <view class='wxyj_number wxyj_row_gjj'>{{personalGjjBeg}} ~ {{personalGjjEnd}}</view>
-        </view>
-        <view class='wxyj_row_last'>
-          <view class='wxyj_name'>个人所得税</view>
-          <view class='wxyj_number_last wxyj_row_tax'>{{personalTaxBeg}} ~ {{personalTaxEnd}}</view>
-        </view>
-      </view>
-
-    </view>
-  </view>
-
-
-  <!-- 跳转报表页按钮 -->
-  <view class="fixed_buttons_view {{isMoreButtonHide ? 'isHide' : ''}}">
-    <view class="more_button" bindtap="more">了解更多</view>
-  </view>
-
 </view>

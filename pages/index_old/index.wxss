@@ -1,12 +1,10 @@
 /* pages/index/index.wxss */
 .salaryandsurplus {
   width: 100%;
-  height: 127px;
+  height: 107px;
   background-color: #61A189;
   display: flex;
   flex-direction: row;
-
-  border-radius: 28px 28px 0px 0px;
 }
 .salaryandsurplusview {
   margin-top: 13px;
@@ -14,8 +12,6 @@
   margin-bottom: 5px;
   margin-right: 21px;     /* 临时数值，这里要再加一个view放中间，做响应式布局 */
   flex: 1;
-
-  border-radius: 28px 28px 0px 0px;
 }
 
 
@@ -40,7 +36,7 @@
   font-size: 14px;
   color: #FFFFFF;
   letter-spacing: 0;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
 }
 .salaryandsurplusview .ssrefernumber {
   display: flex;
@@ -110,7 +106,7 @@
 
 .userinfo_input1 {
   width: 100%;
-  height: 190px;
+  height: 168px;
   background-color: #FFFFFF;
   margin-bottom: 10px;
 }
@@ -118,10 +114,14 @@
   display: flex;
   flex-direction: row;
 }
-.userinfo_input11_margin {
+.userinfo_input11_border_margin {
   margin-left: 12px;
   margin-right: 12px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+
+  border-bottom-style: solid;
+  border-bottom-color: #E6E6E6;
+  border-bottom-width: 1px;
 }
 .userinfo_input_margin {
   margin-left: 12px;
@@ -141,7 +141,8 @@
   flex-direction: row;
 }
 .userinfo_input_view {
-  margin-top: 20px;
+  margin-top: 14px;
+  /* margin-bottom: 26px; */
   padding-left: 20px;
   padding-right: 20px;
   flex: 1;
@@ -193,9 +194,9 @@
   margin-top: 1px;
 }
 .userinfo_input_view .ui_title_text {
-  font-family: PingFangSC-Regular;
-  font-size: 14px;
-  color: #49A388;
+  font-family: PingFangSC-Medium;
+  font-size: 12px;
+  color: #61A189;
   letter-spacing: 0;
   margin-bottom: 8px;
 }
@@ -308,7 +309,7 @@
 
 .tax_reference {
   width: 100%;
-  height: 35px;
+  height: 29px;
   background-color: #428068;
   display: flex;
   flex-direction: row;
@@ -329,7 +330,7 @@
 
 .background_separated {
   width: 100%;
-  height: 1px;
+  height: 7px;
   background-color: #F1F1F1;
 }
 .background_separated_bottom {
@@ -339,8 +340,8 @@
 }
 .background_separated_wuxianyijin {
   width: 100%;
-  height: 54px;
-  background-color: #61A189;
+  height: 34px;
+  background-color: #F1F1F1;
   display: flex;
   flex-direction: row;
 }
@@ -348,22 +349,23 @@
   width: 16px;
   height: 16px;
   margin-left: 30px;
-  margin-top: 22px; 
+  margin-top: 10px; 
   margin-right: 5px;
 }
 .background_separated_wuxianyijin_text {
   font-family: PingFangSC-Medium;
   font-size: 12px;
-  color: #FFFFFF;
+  color: #9E9E9E;
   letter-spacing: 0;
-  margin-top: 22px; 
+  margin-top: 10px; 
 }
 
 
 .wuxianyijin_reference {
   width: 100%;
   height: 209px;
-  background-color: #61A189;
+  background-color: #FFFFFF;
+  margin-top: 9px;
 
   display: flex;
   flex-direction: column;
@@ -391,32 +393,64 @@
 }
 .wxyj_name {
   font-family: PingFangSC-Medium;
-  font-size: 14px;
-  color: #FFFFFF;
+  font-size: 15px;
+  color: #9E9E9E;
   letter-spacing: 0;
 }
 .wxyj_number {
   font-family: PingFangSC-Medium;
-  font-size: 14px;
-  color: #FFFFFF;
+  font-size: 15px;
+  color: #9E9E9E;
   letter-spacing: 0;
   text-align: right;
   float: right;
   width: 250px;
 }
-.wxyj_row_gjj {
-  width: 264px;
-}
 .wxyj_number_last {
   font-family: PingFangSC-Medium;
-  font-size: 14px;
-  color: #FFFFFF;
+  font-size: 15px;
+  color: #9E9E9E;
   letter-spacing: 0;
   text-align: right;
   float: right;
-  width: 236px;
+  width: 265px;
 }
 
+
+.buttons_view {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+}
+.commit_button {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  background-color: #61A189;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+}
+.analysis_button {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  background-color: #428068;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+}
 
 
 .container {
@@ -448,7 +482,7 @@
 
 /* 最高学历选择栏显示控制 */
 .isHide {
-  display: none !important;
+  display: none;
 }
 .rs_ok_or_cancel {
   display: flex;
@@ -514,113 +548,3 @@
 .selectlock {
   display: none;
 }
-
-
-
-
-
-
-/* 改版后的样式 */
-.title {
-  width: 100vw;
-  height: 90px;
-}
-.title_text {
-  font-family: PingFangSC-Medium;
-  font-size: 32px;
-  color: #000000;
-  letter-spacing: 0;
-
-  padding-top: 40px;
-  padding-left: 22px;
-}
-.buttons_view {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.analysis_button {
-  background-color: #FFFFFF;
-  font-family: PingFangSC-Semibold;
-  font-size: 18px;
-  color: #61A189;
-  letter-spacing: 0;
-  margin-top: 32px;
-  width: 116px;
-  height: 36px;
-  border-radius: 20px;
-  border-style: solid;
-  border-color: #61A189;
-  border-width: 2px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.analysis_button_ready {
-  background-color: #61A189;
-  font-family: PingFangSC-Semibold;
-  font-size: 18px;
-  color: #FFFFFF;
-  letter-spacing: 0;
-  margin-top: 32px;
-  width: 116px;
-  height: 36px;
-  border-radius: 20px;
-  border-style: solid;
-  border-color: #61A189;
-  border-width: 2px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.fixed_buttons_view {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: 44px;
-  background-color: red;
-  z-index: 20;
-}
-.more_button {
-  font-family: PingFangSC-Medium;
-  font-size: 20px;
-  color: #FFFFFF;
-  letter-spacing: 0;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex: 1;
-}
-.more_button_hide {
-  display: none;
-}
-
-.result {
-  border-radius: 28px 28px 0px 0px;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100vw;
-}
-.short_term {
-  width: 50px;
-  height: 3px;
-  background-color: #FFFFFF;
-  border-radius: 2px 2px 2px 2px;
-  position: relative;
-  top: 7px;
-}
-
-

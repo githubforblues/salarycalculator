@@ -51,31 +51,13 @@ Page({
     isHide: true,
     isSelectLock: false,
     university_longstring: false,
-    isResultHide: true,
-    isMoreButtonHide: true,
-    isShadeHide: true,
-
-    short_term_left: '',
-
-    // moveData: null,
-    winheight: '',
-    winheight_start: '',
-    countWH: 0,
-    startY: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var winheight = wx.getSystemInfoSync().windowHeight;
-    var winwidth = wx.getSystemInfoSync().windowWidth;
-    this.setData({
-      winheight: winheight - 200 + 'px',
-      winheight_start: winheight - 200 + 'px',
-      countWH: winheight,
-      short_term_left: ( winwidth - 50 ) / 2 + 'px',
-    })
+
   },
 
   /**
@@ -178,33 +160,8 @@ Page({
   select_industry: function () {
     wx.navigateTo({ url: "/pages/industrylist/industrylist" })
   },
-  // 点击出现数据结果
+  // 点击跳转到方案分析页
   analysis: function () {
-    if (this.data.input_count == 15) {
-      this.setData({
-        isResultHide: false,
-        isMoreButtonHide: false,
-        isShadeHide: false,
-      })
-
-      // var winheight = wx.getSystemInfoSync().windowHeight;
-      // var initnum = 200;
-      // var resultheight = 425 - initnum;
-
-      // var animation = wx.createAnimation({
-      //   duration: 600,
-      //   timingFunction: 'ease-out',
-      // })
-
-      // animation.translateY(-resultheight).step({ duration: 600 })
-      // this.setData({ 
-      //   moveData: animation.export() 
-      // })
-
-    }
-  },
-  // 点击跳转到报表页
-  more: function () {
     if (this.data.input_count == 15) {
       this.datasave()
       wx.navigateTo({ url: "/pages/result/result" })
@@ -418,77 +375,8 @@ Page({
         })
       }
     })
-  },
-
-
-
-  // 浮动页面滑动
-  touchS: function (e) {
-    if (e.touches.length == 1) {
-      this.setData({
-        //设置触摸起始点水平方向位置
-        startY: e.touches[0].clientY
-      });
-    }
-  },
-
-  touchM: function (e) {
-    var windows_height = this.data.countWH
-
-    if (e.touches.length == 1) {
-      //手指移动时垂直方向位置
-      var moveY = e.touches[0].clientY;
-      //手指起始点位置与移动期间的差值
-      var disY = this.data.startY - moveY;
-      var winheight_start = parseInt(this.data.winheight_start);
-      if (disY == 0 || disY < 0) {
-        this.setData({
-          winheight: winheight_start - disY + 'px'
-        })
-      } else if (disY > 0) {
-        if (parseInt(this.data.winheight) >= windows_height - 425) {
-          this.setData({
-            winheight: winheight_start - disY + 'px'
-          })
-        }
-      }
-    }
-  },
-
-  touchE: function (e) {
-    if (e.changedTouches.length == 1) {
-      this.setData({
-        winheight_start: this.data.winheight
-      })
-
-      //手指移动结束后垂直位置
-      var endY = e.changedTouches[0].clientY;
-      if (endY >= this.data.countWH - 50) {
-        this.cancel_resultshade()
-      }
-
-      //触摸开始与结束，手指移动的距离
-      // var disX = this.data.startX - endX;
-      // var delBtnWidth = this.data.delBtnWidth;
-      // //如果距离小于删除按钮的1/2，不显示删除按钮
-      // var txtStyle = disX > delBtnWidth / 2 ? "left:-" + delBtnWidth + "px" : "left:0px";
-      // //获取手指触摸的是哪一项
-      // var index = e.currentTarget.dataset.index;
-    }
-  },
-
-
-
-  cancel_resultshade: function() {
-    var winheight = wx.getSystemInfoSync().windowHeight;
-    this.setData({
-      winheight: winheight - 200 + 'px',
-      winheight_start: winheight - 200 + 'px',
-      isResultHide: true,
-      isMoreButtonHide: true,
-      isShadeHide: true,
-    })
   }
+
 
 })
 
