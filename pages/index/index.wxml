@@ -124,6 +124,7 @@
   <!-- 结果报表 -->
   <view>
     <view class="shade {{isShadeHide ? 'isHide' : ''}}" bindtap="cancel_resultshade" catchtouchmove="true"></view>
+    <!-- <view class="result {{isResultHide ? 'isHide' : ''}}" style='top:{{winheight}};' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE"> -->
     <view class="result {{isResultHide ? 'isHide' : ''}}" style='top:{{winheight}};' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
       <view class='short_term' style='left:{{short_term_left}}'></view>
       <view class='salaryandsurplus'>
@@ -168,7 +169,7 @@
       </view>
 
       <view class='background_separated_wuxianyijin'>
-        <image src='../../images/wuxianyijin@3x.png' class='background_separated_img'></image>
+        <image src='../../images/coin@3x.png' class='background_separated_img'></image>
         <view class='background_separated_wuxianyijin_text'>五险一金个人缴纳部分明细参考</view>
       </view>
       <view class='wuxianyijin_reference'>

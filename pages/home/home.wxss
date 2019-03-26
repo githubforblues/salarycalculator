@@ -158,3 +158,31 @@ swiper {
 }
 
 
+.userinfo {
+  width: 100%;
+  height: 140px;
+  background-color: #1D77F4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.username {
+  font-family: PingFangSC-Semibold;
+  font-size: 38px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 18px;
+}
+.useravatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border-color: #FFFFFF;
+  border-width: 3px;
+  border-style: solid;
+}

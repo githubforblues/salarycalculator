@@ -1,5 +1,6 @@
 // pages/home/home.js
 var Api = require('../../api/apis.js');
+const app = getApp();
 
 Page({
 
@@ -27,6 +28,9 @@ Page({
 
     levellist: ['乞丐', '穷人', '小康', '中产', '富豪'],
     levelnum: 0,
+
+    username: '',
+    userimg: '',
   },
 
   handleChange: function (e) {
@@ -58,6 +62,12 @@ Page({
           icon: 'none'
         })
       }
+    })
+
+    var userInfo = app.globalData.userInfo
+    this.setData({
+      userimg: userInfo.avatarUrl,
+      username: userInfo.nickName,
     })
   },
 

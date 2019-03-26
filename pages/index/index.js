@@ -58,9 +58,9 @@ Page({
     short_term_left: '',
 
     // moveData: null,
-    winheight: '',
     winheight_start: '',
-    countWH: 0,
+    // countWH: 0,
+    winheight: '',
     startY: 0,
   },
 
@@ -71,9 +71,10 @@ Page({
     var winheight = wx.getSystemInfoSync().windowHeight;
     var winwidth = wx.getSystemInfoSync().windowWidth;
     this.setData({
-      winheight: winheight - 200 + 'px',
-      winheight_start: winheight - 200 + 'px',
-      countWH: winheight,
+      winheight: winheight - 425 + 'px',
+      // winheight: winheight - 200 + 'px',
+      // winheight_start: winheight - 425 + 'px',
+      // countWH: winheight,
       short_term_left: ( winwidth - 50 ) / 2 + 'px',
     })
   },
@@ -180,7 +181,7 @@ Page({
   },
   // 点击出现数据结果
   analysis: function () {
-    if (this.data.input_count == 15) {
+    if (this.data.input_count == 0) {
       this.setData({
         isResultHide: false,
         isMoreButtonHide: false,
@@ -427,48 +428,66 @@ Page({
     if (e.touches.length == 1) {
       this.setData({
         //设置触摸起始点水平方向位置
-        startY: e.touches[0].clientY
+        startY: e.touches[0].clientY,
+        winheight_start: parseInt(this.data.winheight)
       });
     }
   },
 
   touchM: function (e) {
-    var windows_height = this.data.countWH
+    // var windows_height = this.data.countWH
 
     if (e.touches.length == 1) {
       //手指移动时垂直方向位置
       var moveY = e.touches[0].clientY;
       //手指起始点位置与移动期间的差值
       var disY = this.data.startY - moveY;
+      // var winheight_start = parseInt(this.data.winheight_start);
+      // if (disY == 0 || disY < 0) {
+      //   this.setData({
+      //     winheight: winheight_start - disY + 'px'
+      //   })
+      // } else if (disY > 0) {
+      //   if (parseInt(this.data.winheight) >= windows_height - 425) {
+      //     this.setData({
+      //       winheight: winheight_start - disY + 'px'
+      //     })
+      //   }
+      // }
       var winheight_start = parseInt(this.data.winheight_start);
-      if (disY == 0 || disY < 0) {
+      if (disY < 0) {
         this.setData({
           winheight: winheight_start - disY + 'px'
         })
-      } else if (disY > 0) {
-        if (parseInt(this.data.winheight) >= windows_height - 425) {
-          this.setData({
-            winheight: winheight_start - disY + 'px'
-          })
-        }
       }
     }
   },
 
   touchE: function (e) {
     if (e.changedTouches.length == 1) {
-      this.setData({
-        winheight_start: this.data.winheight
-      })
+      var winheight_start = parseInt(this.data.winheight_start)
+      var winheight = parseInt(this.data.winheight)
 
-      //手指移动结束后垂直位置
-      var endY = e.changedTouches[0].clientY;
-      if (endY >= this.data.countWH - 50) {
+      if (winheight_start - winheight < -50) {
         this.cancel_resultshade()
+      } else {
+        console.log(winheight_start)
+        this.setData({
+          winheight: winheight_start + 'px',
+        })
       }
+    //   this.setData({
+    //     winheight_start: this.data.winheight
+    //   })
+
+    //   //手指移动结束后垂直位置
+    //   var endY = e.changedTouches[0].clientY;
+    //   if (endY >= this.data.countWH - 50) {
+    //     this.cancel_resultshade()
+    //   }
 
       //触摸开始与结束，手指移动的距离
-      // var disX = this.data.startX - endX;
+      // var disY = this.data.startY - endY;
       // var delBtnWidth = this.data.delBtnWidth;
       // //如果距离小于删除按钮的1/2，不显示删除按钮
       // var txtStyle = disX > delBtnWidth / 2 ? "left:-" + delBtnWidth + "px" : "left:0px";
@@ -482,8 +501,9 @@ Page({
   cancel_resultshade: function() {
     var winheight = wx.getSystemInfoSync().windowHeight;
     this.setData({
-      winheight: winheight - 200 + 'px',
-      winheight_start: winheight - 200 + 'px',
+      winheight: winheight - 425 + 'px',
+      // winheight: winheight - 200 + 'px',
+      // winheight_start: winheight - 200 + 'px',
       isResultHide: true,
       isMoreButtonHide: true,
       isShadeHide: true,

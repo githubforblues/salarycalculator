@@ -587,7 +587,7 @@
   bottom: 0;
   width: 100vw;
   height: 44px;
-  background-color: red;
+  background-color: #007AFF;
   z-index: 20;
 }
 .more_button {

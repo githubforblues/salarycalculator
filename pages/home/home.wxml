@@ -2,13 +2,18 @@
 
 <view>
   <!-- 轮播图 -->
-  <swiper autoplay interval="{{interval}}" circular previous-margin="{{leftMargin}}" next-margin="{{rightMargin}}" bindchange="handleChange">
+  <!-- <swiper autoplay interval="{{interval}}" circular previous-margin="{{leftMargin}}" next-margin="{{rightMargin}}" bindchange="handleChange">
     <block wx:for="{{imgUrls}}">
       <swiper-item>
         <image src="{{item}}" class="slide-image {{currentIndex == index ? 'active': ''}}" />
       </swiper-item>
     </block>
-  </swiper>
+  </swiper> -->
+
+  <view class='userinfo'>
+    <image class='useravatar' src="{{userimg}}"></image>
+    <view class='username'>{{username}}</view>
+  </view>
 
   <view class='row' wx:for="{{list}}">
     <view class='plan' data-index="{{item.id}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" bindtap="rowdetail" style="{{item.txtStyle}}" data-style="{{item.txtStyle}}">
