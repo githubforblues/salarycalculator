@@ -2,7 +2,7 @@
 <!--pages/citylist/citylist.wxml-->
 <view class='container'>
   <scroll-view scroll-y="{{scroll_y_provinces}}" class='provinces' style='overflow: {{provinces_overflow}}'>
-    <view wx:for="{{provinceslist}}" class='provinces_text' bindtap="select_provinces" data-code="{{item.code}}">{{item.name}}</view>
+    <view wx:for="{{provinceslist}}" class='provinces_text' bindtap="select_provinces" data-name="{{item.name}}">{{item.name}}</view>
   </scroll-view>
 
   <view class="shade {{isShade ? '' : 'shadehide'}}" bindtap="shadehide"></view>

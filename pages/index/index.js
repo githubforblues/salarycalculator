@@ -325,8 +325,8 @@ Page({
         "city": this.data.input_city_string,
         "diploma": this.data.input_record_string,
         "industry": this.data.input_industry_longstring,
-        "houseRent": this.data.input_homecost,
-        "otherExpense": this.data.input_othercost,
+        "houseRent": parseInt(this.data.input_homecost),
+        "otherExpense": parseInt(this.data.input_othercost),
       }, function (res) {
         that.setData({
           salaryref: res.data.mouthPay,

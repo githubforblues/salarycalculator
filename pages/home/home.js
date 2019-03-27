@@ -31,6 +31,8 @@ Page({
 
     username: '',
     userimg: '',
+
+    isFirst: true,
   },
 
   handleChange: function (e) {
@@ -43,32 +45,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    Api.getResultList({
-      'offset': 0,
-      'length': 100
-    }, function (res) {
-      var tmplist = res.data
-      for (var i=0; i<tmplist.length; i++){
-        tmplist[i]['txtStyle'] = ''
-      }
-      that.setData({
-        list: tmplist,
+    if (this.data.isFirst == true) {
+      this.setData({
+        isFirst: false
       })
-    }, function (res) {
-      if (res.statusCode == 404) {
-        wx.showToast({
-          title: '暂无内容',
-          icon: 'none'
-        })
-      }
-    })
 
-    var userInfo = app.globalData.userInfo
-    this.setData({
-      userimg: userInfo.avatarUrl,
-      username: userInfo.nickName,
-    })
+      var that = this
+      Api.getResultList({
+        'offset': 0,
+        'length': 100
+      }, function (res) {
+        var tmplist = res.data
+        for (var i = 0; i < tmplist.length; i++) {
+          tmplist[i]['txtStyle'] = ''
+        }
+        that.setData({
+          list: tmplist,
+        })
+      }, function (res) {
+        if (res.statusCode == 404) {
+          wx.showToast({
+            title: '暂无内容',
+            icon: 'none'
+          })
+        }
+      })
+
+      var userInfo = app.globalData.userInfo
+      this.setData({
+        userimg: userInfo.avatarUrl,
+        username: userInfo.nickName,
+      })
+    }
   },
 
   /**
@@ -82,7 +90,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if (this.data.isFirst == false) {
+      var that = this
+      Api.getResultList({
+        'offset': 0,
+        'length': 100
+      }, function (res) {
+        var tmplist = res.data
+        for (var i = 0; i < tmplist.length; i++) {
+          tmplist[i]['txtStyle'] = ''
+        }
+        that.setData({
+          list: tmplist,
+        })
+      }, function (res) {
+        if (res.statusCode == 404) {
+          wx.showToast({
+            title: '暂无内容',
+            icon: 'none'
+          })
+        }
+      })
 
+      var userInfo = app.globalData.userInfo
+      this.setData({
+        userimg: userInfo.avatarUrl,
+        username: userInfo.nickName,
+      })
+    }
   },
 
   /**
@@ -278,8 +313,8 @@ Page({
           surplusref: res.data.content.result.balance,
           balanceBeg: res.data.content.result.balanceBeg,
           balanceEnd: res.data.content.result.balanceEnd,
-          rankOfAll: (res.data.content.result.rankOfAll * 100).toFixed(0),
-          rankOfCity: (res.data.content.result.rankOfCity * 100).toFixed(0),
+          rankOfAll: res.data.content.result.rankOfAll,
+          rankOfCity: res.data.content.result.rankOfCity,
           assessLevel: res.data.content.result.assessLevel,
           input_city_string: res.data.content.form.city,
         })

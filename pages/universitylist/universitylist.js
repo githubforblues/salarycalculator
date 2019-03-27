@@ -11,7 +11,7 @@ Page({
     citylist: [],
     universitylist: [],
 
-    select_provinces_code: '',
+    select_provinces_name: '',
     select_city_name: '',
     select_university_code: '',
     select_university_string: '',
@@ -37,7 +37,7 @@ Page({
     }, function (res) {
       var list = []
       for(var i=0; i<res.data.length; i++) {
-        var row = {'code': res.data[i].code, 'name': res.data[i].nameCN}
+        var row = {'name': res.data[i].nameCN}
         list.push(row)
       }
       that.setData({
@@ -106,21 +106,24 @@ Page({
   // 点击事件处理
 
   select_provinces: function (e) {
-    var code = e.currentTarget.dataset.code
+    var name = e.currentTarget.dataset.name
+    console.log('name', name)
     this.setData({
       isShade: true,
       iscitylistShow: true,
-      select_provinces_code: code,
+      select_provinces_name: name,
       provinces_overflow: "hidden",
       scroll_y_provinces: false,
     })
 
 
     var that = this
-    Api.getCityList({}, this.data.select_provinces_code ,function (res) {
+    Api.getCityList({
+      province: this.data.select_provinces_name
+    } ,function (res) {
       var list = []
       for (var i = 0; i < res.data.length; i++) {
-        var row = { 'code': res.data[i].code, 'name': res.data[i].nameCN }
+        var row = { 'name': res.data[i] }
         list.push(row)
       }
       that.setData({

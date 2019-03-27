@@ -10,7 +10,7 @@ Page({
     provinceslist: [], 
     citylist: [],
 
-    select_provinces_code: '',
+    select_provinces_name: '',
     select_city_name: '',
 
     isShade: false,
@@ -31,7 +31,7 @@ Page({
     }, function (res) {
       var list = []
       for (var i = 0; i < res.data.length; i++) {
-        var row = { 'code': res.data[i].code, 'name': res.data[i].nameCN }
+        var row = { 'name': res.data[i].nameCN }
         list.push(row)
       }
       that.setData({
@@ -101,21 +101,23 @@ Page({
   // 点击事件处理
 
   select_provinces: function (e) {
-    var code = e.currentTarget.dataset.code
+    var name = e.currentTarget.dataset.name
     this.setData({
       isShade: true,
       iscitylistShow: true,
-      select_provinces_code: code,
+      select_provinces_name: name,
       overflow: "hidden",
       scroll_y: false,
     })
 
 
     var that = this
-    Api.getCityList({}, this.data.select_provinces_code, function (res) {
+    Api.getCityList({
+      province: this.data.select_provinces_name
+    }, function (res) {
       var list = []
       for (var i = 0; i < res.data.length; i++) {
-        var row = { 'code': res.data[i].code, 'name': res.data[i].nameCN }
+        var row = { 'name': res.data[i] }
         list.push(row)
       }
       that.setData({
@@ -133,7 +135,6 @@ Page({
 
   select_city: function (e) {
     var name = e.currentTarget.dataset.name
-    var code = e.currentTarget.dataset.code
 
     var pages = getCurrentPages();
     var currPage = pages[pages.length - 1];   //当前页面
@@ -143,13 +144,13 @@ Page({
     if (prevPage.data.input_city_string == '') {
       prevPage.setData({
         input_count: prevPage.data.input_count + 1,
-        input_city_code: code,
+        // input_city_code: code,
         input_city_string: name,
       })
       prevPage.cost_forecast()
     } else {
       prevPage.setData({
-        input_city_code: code,
+        // input_city_code: code,
         input_city_string: name,
       })
       prevPage.cost_forecast()

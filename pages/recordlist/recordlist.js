@@ -8,7 +8,7 @@ Page({
    */
   data: {
     // 列表应该需要提供id和string两个值
-    recordlist: ['大专','本科','硕士','博士及以上'],
+    recordlist: ['专科','本科','硕士','博士及以上'],
     // 选中的字符串，返回给上一页
     input_record: -1,
     input_record_string: '',
