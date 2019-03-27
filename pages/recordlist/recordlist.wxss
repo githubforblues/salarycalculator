@@ -1,9 +1,13 @@
-/* pages/industrylist/industrylist.wxss */
+/* pages/recordlist/recordlist.wxss */
+
+/* pages/citylist/citylist.wxss */
+
+/* pages/citylist/citylist.wxss */
 
 .container {
   position: relative;
 }
-.industrylist {
+.recordlist {
   position: absolute;
   z-index: 1;
   top: 0px;
@@ -11,7 +15,7 @@
   width: 100%;
   background-color: #FFFFFF;
 }
-.industry_text {
+.record_text {
   font-family: PingFangSC-Regular;
   font-size: 14px;
   color: #080808;

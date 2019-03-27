@@ -524,6 +524,8 @@
 .title {
   width: 100vw;
   height: 90px;
+  display: flex;
+  flex-direction: row;
 }
 .title_text {
   font-family: PingFangSC-Medium;
@@ -533,6 +535,12 @@
 
   padding-top: 40px;
   padding-left: 22px;
+}
+.reset {
+  width: 25px;
+  height: 25px;
+  padding-top: 50px;
+  padding-left: 12px;
 }
 .buttons_view {
   display: flex;
@@ -622,5 +630,6 @@
   position: relative;
   top: 7px;
 }
+
 
 

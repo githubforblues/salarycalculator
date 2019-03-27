@@ -1,0 +1,7 @@
+<!--pages/recordlist/recordlist.wxml-->
+<view class='container'>
+  <view class='recordlist'>
+    <view wx:for="{{recordlist}}" class='record_text' bindtap="select_record" data-text="{{item}}">{{item}}</view>
+  </view>
+</view>
+

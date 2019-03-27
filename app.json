@@ -7,6 +7,7 @@
     "pages/citylist/citylist",
     "pages/result/result",
     "pages/industrylist/industrylist",
+    "pages/recordlist/recordlist",
     "pages/test/test"
   ],
   "window": {

@@ -4,7 +4,7 @@
 
     <view class='title'>
       <view class='title_text'>薪知</view>
-      <image class=''></image>
+      <image src="../../images/reset@3x.png" class='reset' bindtap="reset"></image>
     </view>
 
     <view class='background_separated'></view>
@@ -59,7 +59,7 @@
           </view>
           <view class='choice'>
             <view class='ui_choice' bindtap="select_record">
-              <view class="ui_choice_text_record {{input_record == 3 ? 'extra_ir_textstyle' : ''}}">{{input_record_string}}</view>
+              <view class="ui_choice_text_record {{input_record_string == '博士及以上' ? 'extra_ir_textstyle' : ''}}">{{input_record_string}}</view>
               <image src="../../images/arrow_input@3x.png" class='arrow_input'></image>
             </view>
           </view>
@@ -108,15 +108,15 @@
 
 
   <!-- 用于最高学历选择 -->
-  <view class="shade {{isHide ? 'isHide' : ''}}" bindtap="cancel_selector" catchtouchmove="true"></view>
-  <view class="record_select {{isHide ? 'isHide' : ''}}" catchtouchmove="true">
+  <!-- <view class="shade {{isHide ? 'isHide' : ''}}" bindtap="cancel_selector" catchtouchmove="true"></view> -->
+  <!-- <view class="record_select {{isHide ? 'isHide' : ''}}" catchtouchmove="true">
     <view class='rs_choice'>
       <view class="{{input_record == 0 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='0'>专科</view>
       <view class="{{input_record == 1 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='1'>本科</view>
       <view class="{{input_record == 2 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='2'>硕士</view>
       <view class="{{input_record == 3 ? 'chosen' : 'notchosen'}}" bindtap="click_rs_item" data-id='3'>博士及以上</view>
     </view>
-  </view>
+  </view> -->
 
   <!-- 用于数字输入时防止点击其他项 -->
   <view class="selectlockshade {{isSelectLock ? '' : 'selectlock'}}" bindtap="select_unlock" catchtouchmove="true"></view>

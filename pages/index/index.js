@@ -135,37 +135,38 @@ Page({
 
   // 展示最高学历选择栏
   select_record: function () {
-    this.setData({
-      isHide: false
-    })
+    wx.navigateTo({ url: "/pages/recordlist/recordlist" })
+    // this.setData({
+    //   isHide: false
+    // })
   },
 
   // 点击遮罩隐藏最高学历选择栏
-  cancel_selector: function () {
-    this.setData({
-      isHide: true
-    })
-  },
+  // cancel_selector: function () {
+  //   this.setData({
+  //     isHide: true
+  //   })
+  // },
 
   // 用户点击选择学历选项
-  click_rs_item: function (e) {
-    var id = e.currentTarget.dataset.id
-    var string = getrecordstring(id)
+  // click_rs_item: function (e) {
+    // var id = e.currentTarget.dataset.id
+    // var string = getrecordstring(id)
 
-    if (this.data.input_record_string == '') {
-      this.setData({
-        input_count: this.data.input_count + 8
-      })
-      this.cost_forecast()
-    }
+    // if (this.data.input_record_string == '') {
+    //   this.setData({
+    //     input_count: this.data.input_count + 8
+    //   })
+    //   this.cost_forecast()
+    // }
 
-    this.setData({
-      input_record: id,
-      input_record_string: string
-    })
+    // this.setData({
+    //   input_record: id,
+    //   input_record_string: string
+    // })
 
-    this.cancel_selector()
-  },
+    // this.cancel_selector()
+  // },
 
   // 点击跳转到学校选择页
   select_university: function () {
@@ -181,7 +182,7 @@ Page({
   },
   // 点击出现数据结果
   analysis: function () {
-    if (this.data.input_count == 0) {
+    if (this.data.input_count == 15) {
       this.setData({
         isResultHide: false,
         isMoreButtonHide: false,
