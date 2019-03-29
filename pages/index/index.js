@@ -72,9 +72,6 @@ Page({
     var winwidth = wx.getSystemInfoSync().windowWidth;
     this.setData({
       winheight: winheight - 425 + 'px',
-      // winheight: winheight - 200 + 'px',
-      // winheight_start: winheight - 425 + 'px',
-      // countWH: winheight,
       short_term_left: ( winwidth - 50 ) / 2 + 'px',
     })
   },
@@ -509,7 +506,12 @@ Page({
       isMoreButtonHide: true,
       isShadeHide: true,
     })
-  }
+  },
+
+  // 数值输入时的遮罩层滑动取消
+  sls_touchS: function (e) {
+    this.select_unlock()
+  },
 
 })
 

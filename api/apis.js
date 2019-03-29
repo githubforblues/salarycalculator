@@ -5,12 +5,17 @@ var DELETE = require('../utils/netUtil.js')
 export function getIndustriesList(params, success, fail) {
   GET.getApi('/v1/api/assess/industries', params, success, fail);
 }
-export function getProvincesList(params, success, fail) {
+export function getProvincesListForCity(params, success, fail) {
+  GET.getApi('/v1/api/assess/geo/provinces', params, success, fail);
+}
+export function getProvincesListForSchool(params, success, fail) {
   GET.getApi('/v1/api/geo/provinces', params, success, fail);
 }
-export function getCityList(params, success, fail) {
-  // GET.getApi('/v1/api/geo/province/' + code + '/cities', params, success, fail);
+export function getCityListForCity(params, success, fail) {
   GET.getApi('/v1/api/assess/geo/province/cities', params, success, fail);
+}
+export function getCityListForSchool(params, code, success, fail) {
+  GET.getApi('/v1/api/geo/province/' + code + '/cities', params, success, fail);
 }
 export function getUniversityList(params, success, fail) {
   GET.getApi('/v1/api/assess/campuses', params, success, fail);

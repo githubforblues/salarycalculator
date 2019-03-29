@@ -1,7 +1,6 @@
 <!--pages/index/index.wxml-->
 <view style='overflow: hidden; height: 100%'>
   <view class='container'>
-
     <view class='title'>
       <view class='title_text'>薪知</view>
       <image src="../../images/reset@3x.png" class='reset' bindtap="reset"></image>
@@ -13,7 +12,7 @@
       <view class='userinfo_input11 userinfo_input11_margin'>
         <view class='userinfo_input_view'>
           <view class='uititle'>
-            <image src='../../images/city@3x.png' class='ui_city_img'></image>
+            <!-- <image src='../../images/city@3x.png' class='ui_city_img'></image> -->
             <view class='ui_title_text'>期望工作城市</view>
           </view>
           <view class='choice'>
@@ -25,7 +24,7 @@
         </view>
         <view class='userinfo_input_view'>
           <view class='uititle'>
-            <image src='../../images/industry@3x.png' class='ui_industry_img'></image>
+            <!-- <image src='../../images/industry@3x.png' class='ui_industry_img'></image> -->
             <view class='ui_title_text'>期望从事行业</view>
           </view>
           <view class='choice'>
@@ -42,7 +41,7 @@
       <view class='userinfo_input12 userinfo_input_margin'>
         <view class='userinfo_input_view'>
           <view class='uititle'>
-            <image src='../../images/university@3x.png' class='ui_university_img'></image>
+            <!-- <image src='../../images/university@3x.png' class='ui_university_img'></image> -->
             <view class='ui_title_text'>毕业院校</view>
           </view>
           <view class='choice'>
@@ -54,7 +53,7 @@
         </view>
         <view class='userinfo_input_view'>
           <view class='uititle'>
-            <image src='../../images/record@3x.png' class='ui_record_img'></image>
+            <!-- <image src='../../images/record@3x.png' class='ui_record_img'></image> -->
             <view class='ui_title_text'>最高学历</view>
           </view>
           <view class='choice'>
@@ -72,7 +71,7 @@
     <view class='userinfo_input2'>
       <view class='userinfo_input_view extra_margin_left_for_homecost'>
         <view class='uititle'>
-          <image src='../../images/home@3x.png' class='ui_home_img'></image>
+          <!-- <image src='../../images/home@3x.png' class='ui_home_img'></image> -->
           <view class='ui_title_text'>月度住房开销</view>
         </view>
         <view class='cost'>
@@ -85,7 +84,7 @@
       </view>
       <view class='userinfo_input_view extra_margin_left_for_othercost'>
         <view class='uititle'>
-          <image src='../../images/money@3x.png' class='ui_money_img'></image>
+          <!-- <image src='../../images/money@3x.png' class='ui_money_img'></image> -->
           <view class='ui_title_text'>月度其他开销</view>
         </view>
         <view class='cost'>
@@ -119,7 +118,7 @@
   </view> -->
 
   <!-- 用于数字输入时防止点击其他项 -->
-  <view class="selectlockshade {{isSelectLock ? '' : 'selectlock'}}" bindtap="select_unlock" catchtouchmove="true"></view>
+  <view class="selectlockshade {{isSelectLock ? '' : 'selectlock'}}" bindtap="select_unlock" bindtouchstart="sls_touchS" catchtouchmove="true"></view>
 
   <!-- 结果报表 -->
   <view>

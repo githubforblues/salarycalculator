@@ -12,6 +12,7 @@ Page({
     universitylist: [],
 
     select_provinces_name: '',
+    select_provinces_code: '',
     select_city_name: '',
     select_university_code: '',
     select_university_string: '',
@@ -32,12 +33,12 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    Api.getProvincesList({
+    Api.getProvincesListForSchool({
       'kind': this.data.provinces_kind
     }, function (res) {
       var list = []
       for(var i=0; i<res.data.length; i++) {
-        var row = {'name': res.data[i].nameCN}
+        var row = { 'name': res.data[i].nameCN, 'code': res.data[i].code}
         list.push(row)
       }
       that.setData({
@@ -107,23 +108,24 @@ Page({
 
   select_provinces: function (e) {
     var name = e.currentTarget.dataset.name
-    console.log('name', name)
+    var code = e.currentTarget.dataset.code
     this.setData({
       isShade: true,
       iscitylistShow: true,
       select_provinces_name: name,
+      select_provinces_code: code,
       provinces_overflow: "hidden",
       scroll_y_provinces: false,
+      citylist: [],
     })
 
 
+
     var that = this
-    Api.getCityList({
-      province: this.data.select_provinces_name
-    } ,function (res) {
+    Api.getCityListForSchool({}, this.data.select_provinces_code ,function (res) {
       var list = []
       for (var i = 0; i < res.data.length; i++) {
-        var row = { 'name': res.data[i] }
+        var row = { 'name': res.data[i].nameCN }
         list.push(row)
       }
       that.setData({

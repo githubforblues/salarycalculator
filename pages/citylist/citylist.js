@@ -26,12 +26,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    Api.getProvincesList({
-      'kind': this.data.provinces_kind
-    }, function (res) {
+    Api.getProvincesListForCity({}, function (res) {
       var list = []
       for (var i = 0; i < res.data.length; i++) {
-        var row = { 'name': res.data[i].nameCN }
+        var row = { 'name': res.data[i] }
         list.push(row)
       }
       that.setData({
@@ -112,7 +110,7 @@ Page({
 
 
     var that = this
-    Api.getCityList({
+    Api.getCityListForCity({
       province: this.data.select_provinces_name
     }, function (res) {
       var list = []
